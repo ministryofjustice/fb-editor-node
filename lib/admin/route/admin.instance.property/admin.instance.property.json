@@ -13,7 +13,8 @@
       "isPageHeading": true,
       "label": "{propertyTitle}",
       "hint": "{propertyDescription}",
-      "xhint": "{inheritedValue}"
+      "xhint": "{inheritedValue}",
+      "acceptsEmptyString": "{propertyAcceptsEmptyString}"
     },
     {
       "_id": "admin.instance.property--update-instructions",
