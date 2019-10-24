@@ -22,8 +22,7 @@
     "@ministryofjustice/eslint-config-fb": "^1.1.2"
   },
   "dependencies": {
-    "@ministryofjustice/fb-components-core": "^3.1.0-7",
-    "@ministryofjustice/fb-runner-node": "0.0.160",
+    "@ministryofjustice/fb-runner-node": "0.1.1",
     "@ministryofjustice/fb-specification": "^0.3.3",
     "@ministryofjustice/fb-utils-node": "^0.1.6",
     "ajv": "^6.10.0",
