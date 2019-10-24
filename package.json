@@ -19,8 +19,7 @@
   "author": "Form Builder Team <form-builder-team@digital.justice.gov.uk>",
   "license": "MIT",
   "devDependencies": {
-    "@ministryofjustice/eslint-config-fb": "^1.0.7",
-    "tape": "^4.11.0"
+    "@ministryofjustice/eslint-config-fb": "^1.1.2"
   },
   "dependencies": {
     "@ministryofjustice/fb-runner-node": "0.1.1",
