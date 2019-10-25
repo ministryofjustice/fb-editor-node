@@ -19,16 +19,16 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@ministryofjustice/fb-runner-node": "0.1.1",
+    "@ministryofjustice/fb-runner-node": "^0.1.1",
     "@ministryofjustice/fb-specification": "^0.3.3",
     "@ministryofjustice/fb-utils-node": "^0.1.6",
-    "ajv": "^6.10.0",
+    "ajv": "^6.10.2",
     "csvtojson": "^2.0.10",
-    "deep-equal": "^1.0.1",
-    "flat": "^4.1.0",
-    "json2csv": "^4.5.1",
+    "deep-equal": "^1.1.0",
+    "flat": "^5.0.0",
+    "json2csv": "^4.5.4",
     "jsonpath": "^1.0.2",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@ministryofjustice/eslint-config-fb": "^1.1.2"
