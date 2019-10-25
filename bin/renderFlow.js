@@ -41,11 +41,6 @@ const renderPage = async (url) => {
       displayHeaderFooter: false,
       path: '/tmp/flow.pdf'
     })
-    // scale: 0.75,
-    // format: 'A4',
-    // margin: {
-    //   bottom: '1cm'
-    // },
 
     await page.screenshot({path: '/tmp/flow.png'})
 
