@@ -1,15 +1,11 @@
 {
   "name": "@ministryofjustice/fb-editor-node",
-  "version": "0.0.160",
+  "version": "0.0.161",
   "engines": {
     "node": "12.4.0"
   },
   "description": "Form Builder Editor (for Node)",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ministryofjustice/fb-editor-node.git"
-  },
   "scripts": {
     "start": "node bin/start.js",
     "lint": "eslint lib",
@@ -17,20 +13,24 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Form Builder Team <form-builder-team@digital.justice.gov.uk>",
-  "license": "MIT",
-  "devDependencies": {
-    "@ministryofjustice/eslint-config-fb": "^1.1.2"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ministryofjustice/fb-editor-node.git"
   },
+  "license": "MIT",
   "dependencies": {
-    "@ministryofjustice/fb-runner-node": "0.1.1",
+    "@ministryofjustice/fb-runner-node": "^0.1.1",
     "@ministryofjustice/fb-specification": "^0.3.3",
     "@ministryofjustice/fb-utils-node": "^0.1.6",
-    "ajv": "^6.10.0",
+    "ajv": "^6.10.2",
     "csvtojson": "^2.0.10",
-    "deep-equal": "^1.0.1",
-    "flat": "^4.1.0",
-    "json2csv": "^4.5.1",
+    "deep-equal": "^1.1.0",
+    "flat": "^5.0.0",
+    "json2csv": "^4.5.4",
     "jsonpath": "^1.0.2",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@ministryofjustice/eslint-config-fb": "^1.1.2"
   }
 }
