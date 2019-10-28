@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@ministryofjustice/fb-runner-node": "^0.1.1",
+    "@ministryofjustice/fb-runner-node": "^0.1.3",
     "@ministryofjustice/fb-specification": "^0.3.3",
     "@ministryofjustice/fb-utils-node": "^0.1.6",
     "ajv": "^6.10.2",
