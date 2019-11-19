@@ -35,6 +35,6 @@
     "@ministryofjustice/eslint-config-fb": "^1.1.4"
   },
   "_moduleAliases": {
-    "~" : "./lib"
+    "~": "./lib"
   }
 }
