@@ -31,9 +31,7 @@ jobs:
           command: |
             set -e
 
-            [[ $(<package.json) =~ \"version\":\ *\"([0-9]+\.[0-9]+\.[0-9]+)\" ]];
-
-            VERSION="${BASH_REMATCH[1]}";
+            VERSION=$(node -p "require('./package.json').version")
             PUBLISHED_VERSION=$(npm view @ministryofjustice/fb-editor-node version);
 
             if [ "$VERSION" != "$PUBLISHED_VERSION" ]
