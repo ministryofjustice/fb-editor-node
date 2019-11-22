@@ -28,7 +28,18 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run:
           name: Publish package
-          command: npm publish
+          command: |
+            set -e
+
+            [[ $(<package.json) =~ \"version\":\ *\"([0-9]+\.[0-9]+\.[0-9]+)\" ]];
+
+            VERSION="${BASH_REMATCH[1]}";
+            PUBLISHED_VERSION=$(npm view @ministryofjustice/fb-editor-node version);
+
+            if [ "$VERSION" != "$PUBLISHED_VERSION" ]
+            then
+              npm publish
+            fi
 
 workflows:
   version: 2
