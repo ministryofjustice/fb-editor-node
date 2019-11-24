@@ -1,7 +1,11 @@
-require('module-alias/register')
-
 const path = require('path')
-process.env.APP_DIR = path.resolve(__dirname, '..')
+const init = require('module-alias')
+
+const APP_DIR = path.resolve(__dirname, '..')
+
+init(APP_DIR)
+
+process.env.APP_DIR = APP_DIR
 
 const start = async () => {
   try {
@@ -13,4 +17,5 @@ const start = async () => {
     process.exit(1)
   }
 }
-start()
+
+module.exports = start()

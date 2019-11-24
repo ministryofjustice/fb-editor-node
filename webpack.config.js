@@ -6,7 +6,7 @@
  */
 const {
   _moduleAliases
-} = require('./package.json')
+} = require('./package')
 
 module.exports = {
   mode: 'production',

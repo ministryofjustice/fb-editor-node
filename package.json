@@ -7,7 +7,7 @@
   "description": "Form Builder Editor (for Node)",
   "main": "index.js",
   "scripts": {
-    "start": "node bin/start.js",
+    "start": "./index.js",
     "lint": "eslint lib test",
     "lint:fix": "eslint lib test --fix",
     "test": "mocha test --recursive"
@@ -40,7 +40,6 @@
     "sinon-chai": "^3.3.0"
   },
   "_moduleAliases": {
-    "~/fb-editor-node": "./lib",
-    "~/fb-runner-node": "./node_modules/@ministryofjustice/fb-runner-node/lib"
+    "~/fb-editor-node": "./lib"
   }
 }
