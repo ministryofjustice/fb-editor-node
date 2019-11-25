@@ -1,5 +1,5 @@
 const path = require('path')
-const init = require('module-alias')
+const init = require('@ministryofjustice/module-alias')
 
 const APP_DIR = path.resolve(__dirname, '..')
 

@@ -1,4 +1,4 @@
-require('module-alias')(__dirname)
+require('@ministryofjustice/module-alias/register')
 
 const server = require('~/fb-editor-node/server/server')
 
