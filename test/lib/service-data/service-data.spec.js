@@ -79,7 +79,10 @@ describe('~/fb-editor-node/service-data/service-data', () => {
     beforeEach(() => {
       forEachStub = sinon.stub()
 
-      keysStub = sinon.stub(global.Object, 'keys').returns({forEach: forEachStub})
+      keysStub = sinon.stub(global.Object, 'keys')
+        .returns({
+          forEach: forEachStub
+        })
 
       getServiceSchemasStub.returns(mockSchemas)
 
@@ -155,19 +158,25 @@ describe('~/fb-editor-node/service-data/service-data', () => {
 
       describe('`query` parameter is a string', () => {
         let forEachStub
+        let reduceStub
 
         const filterStub = sinon.stub()
+        let mockQueryReturnValue
         let mockServiceInstances
         let mockInstanceKeys
         let mockInstances
 
         beforeEach(() => {
+          mockQueryReturnValue = {}
+
           forEachStub = sinon.stub()
+          reduceStub = sinon.stub().returns(mockQueryReturnValue)
 
           queryStub.reset()
 
           queryStub.returns({
-            forEach: forEachStub
+            forEach: forEachStub,
+            reduce: reduceStub
           })
 
           mockInstanceKeys = {
@@ -212,7 +221,7 @@ describe('~/fb-editor-node/service-data/service-data', () => {
 
           it('calls `jsonpath.query()`', () => expect(queryStub).to.be.calledWith(mockServiceInstances, '$..[?(@._id)]'))
 
-          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(forEachStub).to.be.calledWith(sinon.match.typeOf('function')))
+          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
 
           it('calls `Object.keys()`', () => expect(keysStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('object')))
 
@@ -241,7 +250,7 @@ describe('~/fb-editor-node/service-data/service-data', () => {
 
           it('calls `jsonpath.query()`', () => expect(queryStub.getCall(0)).to.be.calledWith(mockServiceInstances, '$..[?(@._id)]'))
 
-          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(forEachStub).to.be.calledWith(sinon.match.typeOf('function')))
+          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
 
           it('calls `Object.keys()`', () => expect(keysStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('object')))
 
@@ -255,19 +264,24 @@ describe('~/fb-editor-node/service-data/service-data', () => {
 
       describe('`query` parameter is not a string', () => {
         let forEachStub
+        let reduceStub
 
         const filterStub = sinon.stub()
+        let mockQueryReturnValue
         let mockServiceInstances
         let mockInstanceKeys
         let mockInstances
 
         beforeEach(() => {
+          mockQueryReturnValue = {}
           forEachStub = sinon.stub()
+          reduceStub = sinon.stub().returns(mockQueryReturnValue)
 
           queryStub.reset()
 
           queryStub.returns({
-            forEach: forEachStub
+            forEach: forEachStub,
+            reduce: reduceStub
           })
 
           mockInstanceKeys = {
@@ -312,7 +326,7 @@ describe('~/fb-editor-node/service-data/service-data', () => {
 
           it('calls `jsonpath.query()`', () => expect(queryStub.getCall(0)).to.be.calledWith(mockServiceInstances, '$..[?(@._id)]'))
 
-          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(forEachStub).to.be.calledWith(sinon.match.typeOf('function')))
+          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
 
           it('calls `Object.keys()`', () => expect(keysStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('object')))
 
@@ -350,7 +364,7 @@ describe('~/fb-editor-node/service-data/service-data', () => {
 
           it('calls `jsonpath.query()`', () => expect(queryStub.getCall(0)).to.be.calledWith(mockServiceInstances, '$..[?(@._id)]'))
 
-          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(forEachStub).to.be.calledWith(sinon.match.typeOf('function')))
+          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
 
           it('calls `Object.keys()`', () => expect(keysStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('object')))
 
@@ -371,21 +385,14 @@ describe('~/fb-editor-node/service-data/service-data', () => {
       })
 
       describe('`query` parameter is a string', () => {
-        let forEachStub
-
         const filterStub = sinon.stub()
+
         let mockServiceInstances
         let mockInstanceKeys
         let mockInstances
 
         beforeEach(() => {
-          forEachStub = sinon.stub()
-
           queryStub.reset()
-
-          queryStub.returns({
-            forEach: forEachStub
-          })
 
           mockInstanceKeys = {
             filter: filterStub
@@ -460,19 +467,14 @@ describe('~/fb-editor-node/service-data/service-data', () => {
       })
 
       describe('`query` parameter is not a string', () => {
-        let forEachStub
-
         const filterStub = sinon.stub()
+
         let mockServiceInstances
         let mockInstanceKeys
         let mockInstances
 
         beforeEach(() => {
-          forEachStub = sinon.stub()
-
-          queryStub.returns({
-            forEach: forEachStub
-          })
+          queryStub.reset()
 
           mockInstanceKeys = {
             filter: filterStub
