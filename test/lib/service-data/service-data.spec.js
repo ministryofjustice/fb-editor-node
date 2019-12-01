@@ -75,18 +75,21 @@ describe('~/fb-editor-node/service-data/service-data', () => {
     let returnValue
 
     beforeEach(() => {
-      sortStub = sinon.stub().returns([])
+      reduceStub = sinon.stub()
+      sortStub = sinon.stub()
+
       mockArray = {
+        reduce: reduceStub,
         sort: sortStub
       }
-      reduceStub = sinon.stub().returns(mockArray)
 
-      valuesStub = sinon.stub(global.Object, 'values')
-        .returns({
-          reduce: reduceStub
-        })
+      reduceStub.returns(mockArray)
+      sortStub.returns([])
 
       getServiceSchemasStub.returns(mockServiceSchemas)
+
+      valuesStub = sinon.stub(global.Object, 'values')
+        .returns(mockArray)
 
       returnValue = getServiceSchemaCategories()
     })
@@ -99,7 +102,9 @@ describe('~/fb-editor-node/service-data/service-data', () => {
 
     it('calls `Object.values()`', () => expect(valuesStub).to.be.calledWith(mockServiceSchemas))
 
-    it('iterates over the values`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
+    it('reduces the values`', () => expect(reduceStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
+
+    it('reduces the values`', () => expect(reduceStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
 
     it('sorts the values', () => expect(sortStub).to.be.called)
 
