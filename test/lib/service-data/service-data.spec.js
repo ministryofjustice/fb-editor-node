@@ -143,7 +143,7 @@ describe('~/fb-editor-node/service-data/service-data', () => {
   })
 
   /**
-   *  This is a horrible function and I can't see a simple way to test it
+   *  This is a horrible function
    */
   describe('`getInstancesByType()`', () => {
     const {
@@ -196,8 +196,7 @@ describe('~/fb-editor-node/service-data/service-data', () => {
           keysStub.onCall(1).returns(mockInstanceKeys)
 
           mockInstances = {
-            filter: filterStub,
-            length: 'mock length'
+            filter: filterStub
           }
 
           filterStub.returns(mockInstances)
@@ -207,63 +206,32 @@ describe('~/fb-editor-node/service-data/service-data', () => {
           keysStub.restore()
         })
 
-        describe('`count` is provided as a parameter', () => {
-          let returnValue
+        let returnValue
 
-          beforeEach(() => {
-            const mockOptions = {
-              nested: true,
-              count: true
-            }
+        beforeEach(() => {
+          const mockOptions = {
+            nested: true,
+            count: true
+          }
 
-            returnValue = getInstancesByType('mock query', mockOptions)
-          })
-
-          it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
-
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(mockServiceInstances))
-
-          it('calls `jsonpath.query()`', () => expect(queryStub).to.be.calledWith(mockServiceInstances, '$..[?(@._id)]'))
-
-          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('object')))
-
-          it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('returns the number of instances', () => expect(returnValue).to.equal('mock length'))
+          returnValue = getInstancesByType('mock query', mockOptions)
         })
 
-        describe('`count` is not provided as a parameter', () => {
-          let returnValue
+        it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
 
-          beforeEach(() => {
-            const mockOptions = {
-              nested: true,
-              count: false
-            }
+        it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(mockServiceInstances))
 
-            returnValue = getInstancesByType('mock query', mockOptions)
-          })
+        it('calls `jsonpath.query()`', () => expect(queryStub).to.be.calledWith(mockServiceInstances, '$..[?(@._id)]'))
 
-          it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
+        it('iterates over the keys of the return from `jsonpath.query()`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
 
-          it('calls `Object.keys()`', () => expect(keysStub).to.be.calledWith(mockServiceInstances))
+        it('calls `Object.keys()`', () => expect(keysStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('object')))
 
-          it('calls `jsonpath.query()`', () => expect(queryStub.getCall(0)).to.be.calledWith(mockServiceInstances, '$..[?(@._id)]'))
+        it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
 
-          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
+        it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
 
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('object')))
-
-          it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('returns the instances', () => expect(returnValue).to.equal(mockInstances))
-        })
+        it('returns the instance', () => expect(returnValue).to.equal(mockInstances))
       })
 
       describe('`query` parameter is not a string', () => {
@@ -275,6 +243,8 @@ describe('~/fb-editor-node/service-data/service-data', () => {
         let mockServiceInstances
         let mockInstanceKeys
         let mockInstances
+
+        let returnValue
 
         beforeEach(() => {
           mockQueryReturnValue = {}
@@ -296,88 +266,43 @@ describe('~/fb-editor-node/service-data/service-data', () => {
           getServiceInstancesStub.returns(mockServiceInstances)
 
           mockInstances = {
-            filter: filterStub,
-            length: 'mock length'
+            filter: filterStub
           }
 
           filterStub.returns(mockInstances)
+
+          keysStub = sinon.stub(global.Object, 'keys')
+
+          keysStub.onCall(0).returns(mockKeys)
+          keysStub.onCall(1).returns(mockInstanceKeys)
+
+          const mockOptions = {
+            nested: true,
+            count: true
+          }
+
+          returnValue = getInstancesByType('mock query', mockOptions)
         })
 
-        describe('`count` is provided as a parameter', () => {
-          let returnValue
-
-          beforeEach(() => {
-            keysStub = sinon.stub(global.Object, 'keys')
-
-            keysStub.onCall(0).returns(mockKeys)
-            keysStub.onCall(1).returns(mockInstanceKeys)
-
-            const mockOptions = {
-              nested: true,
-              count: true
-            }
-
-            returnValue = getInstancesByType('mock query', mockOptions)
-          })
-
-          afterEach(() => {
-            keysStub.restore()
-          })
-
-          it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
-
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(mockServiceInstances))
-
-          it('calls `jsonpath.query()`', () => expect(queryStub.getCall(0)).to.be.calledWith(mockServiceInstances, '$..[?(@._id)]'))
-
-          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('object')))
-
-          it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('returns the number of instances', () => expect(returnValue).to.equal('mock length'))
+        afterEach(() => {
+          keysStub.restore()
         })
 
-        describe('`count` is not provided as a parameter', () => {
-          let returnValue
+        it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
 
-          beforeEach(() => {
-            keysStub = sinon.stub(global.Object, 'keys')
+        it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(mockServiceInstances))
 
-            keysStub.onCall(0).returns(mockKeys)
-            keysStub.onCall(1).returns(mockInstanceKeys)
+        it('calls `jsonpath.query()`', () => expect(queryStub.getCall(0)).to.be.calledWith(mockServiceInstances, '$..[?(@._id)]'))
 
-            const mockOptions = {
-              nested: true,
-              count: false
-            }
+        it('iterates over the keys of the return from `jsonpath.query()`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
 
-            returnValue = getInstancesByType('mock query', mockOptions)
-          })
+        it('calls `Object.keys()`', () => expect(keysStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('object')))
 
-          afterEach(() => {
-            keysStub.restore()
-          })
+        it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
 
-          it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
+        it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
 
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(mockServiceInstances))
-
-          it('calls `jsonpath.query()`', () => expect(queryStub.getCall(0)).to.be.calledWith(mockServiceInstances, '$..[?(@._id)]'))
-
-          it('iterates over the keys of the return from `jsonpath.query()`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('object')))
-
-          it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('returns the instances', () => expect(returnValue).to.equal(mockInstances))
-        })
+        it('returns the instances', () => expect(returnValue).to.equal(mockInstances))
       })
     })
 
@@ -395,6 +320,8 @@ describe('~/fb-editor-node/service-data/service-data', () => {
         let mockInstanceKeys
         let mockInstances
 
+        let returnValue
+
         beforeEach(() => {
           queryStub.reset()
 
@@ -408,8 +335,7 @@ describe('~/fb-editor-node/service-data/service-data', () => {
           keysStub = sinon.stub(global.Object, 'keys').returns(mockInstanceKeys)
 
           mockInstances = {
-            filter: filterStub,
-            length: 'mock length'
+            filter: filterStub
           }
 
           filterStub.returns(mockInstances)
@@ -419,55 +345,26 @@ describe('~/fb-editor-node/service-data/service-data', () => {
           keysStub.restore()
         })
 
-        describe('`count` is provided as a parameter', () => {
-          let returnValue
+        beforeEach(() => {
+          const mockOptions = {
+            nested: false,
+            count: true
+          }
 
-          beforeEach(() => {
-            const mockOptions = {
-              nested: false,
-              count: true
-            }
-
-            returnValue = getInstancesByType('mock query', mockOptions)
-          })
-
-          it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
-
-          it('does not call `jsonpath.query()`', () => expect(queryStub).not.to.be.called)
-
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('object')))
-
-          it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('returns the number of instances', () => expect(returnValue).to.equal('mock length'))
+          returnValue = getInstancesByType('mock query', mockOptions)
         })
 
-        describe('`count` is not provided as a parameter', () => {
-          let returnValue
+        it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
 
-          beforeEach(() => {
-            const mockOptions = {
-              nested: false,
-              count: false
-            }
+        it('does not call `jsonpath.query()`', () => expect(queryStub).not.to.be.called)
 
-            returnValue = getInstancesByType('mock query', mockOptions)
-          })
+        it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('object')))
 
-          it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
+        it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
 
-          it('does not call `jsonpath.query()`', () => expect(queryStub).not.to.be.called)
+        it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
 
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('object')))
-
-          it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('returns the instances', () => expect(returnValue).to.equal(mockInstances))
-        })
+        it('returns the instances', () => expect(returnValue).to.equal(mockInstances))
       })
 
       describe('`query` parameter is not a string', () => {
@@ -476,6 +373,8 @@ describe('~/fb-editor-node/service-data/service-data', () => {
         let mockServiceInstances
         let mockInstanceKeys
         let mockInstances
+
+        let returnValue
 
         beforeEach(() => {
           queryStub.reset()
@@ -488,75 +387,65 @@ describe('~/fb-editor-node/service-data/service-data', () => {
           getServiceInstancesStub.returns(mockServiceInstances)
 
           mockInstances = {
-            filter: filterStub,
-            length: 'mock length'
+            filter: filterStub
           }
 
           filterStub.returns(mockInstances)
         })
 
-        describe('`count` is provided as a parameter', () => {
-          let returnValue
+        beforeEach(() => {
+          keysStub = sinon.stub(global.Object, 'keys').returns(mockInstanceKeys)
 
-          beforeEach(() => {
-            keysStub = sinon.stub(global.Object, 'keys').returns(mockInstanceKeys)
+          const mockOptions = {
+            nested: false,
+            count: true
+          }
 
-            const mockOptions = {
-              nested: false,
-              count: true
-            }
-
-            returnValue = getInstancesByType('mock query', mockOptions)
-          })
-
-          afterEach(() => {
-            keysStub.restore()
-          })
-
-          it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
-
-          it('does not call `jsonpath.query()`', () => expect(queryStub).not.to.be.called)
-
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('object')))
-
-          it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('returns the number of instances', () => expect(returnValue).to.equal('mock length'))
+          returnValue = getInstancesByType('mock query', mockOptions)
         })
 
-        describe('`count` is not provided as a parameter', () => {
-          let returnValue
-
-          beforeEach(() => {
-            keysStub = sinon.stub(global.Object, 'keys').returns(mockInstanceKeys)
-
-            const mockOptions = {
-              nested: false,
-              count: false
-            }
-
-            returnValue = getInstancesByType('mock query', mockOptions)
-          })
-
-          afterEach(() => {
-            keysStub.restore()
-          })
-
-          it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
-
-          it('does not call `jsonpath.query()`', () => expect(queryStub).not.to.be.called)
-
-          it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('object')))
-
-          it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
-
-          it('returns the instances', () => expect(returnValue).to.equal(mockInstances))
+        afterEach(() => {
+          keysStub.restore()
         })
+
+        it('calls `getServiceInstances`', () => expect(getServiceInstancesStub).to.be.called)
+
+        it('does not call `jsonpath.query()`', () => expect(queryStub).not.to.be.called)
+
+        it('calls `Object.keys()`', () => expect(keysStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('object')))
+
+        it('filters the keys', () => expect(filterStub.getCall(0)).to.be.calledWith(sinon.match.typeOf('function')))
+
+        it('filters the keys', () => expect(filterStub.getCall(1)).to.be.calledWith(sinon.match.typeOf('function')))
+
+        it('returns the instances', () => expect(returnValue).to.equal(mockInstances))
       })
     })
+  })
+
+  describe('`countInstancesByType()`', () => {
+    const {
+      countInstancesByType
+    } = serviceData
+
+    const mockArgs = {}
+
+    let getInstancesByTypeStub
+
+    let returnValue
+
+    beforeEach(() => {
+      getInstancesByTypeStub = sinon.stub(serviceData, 'getInstancesByType').returns({length: 'mock length'})
+
+      returnValue = countInstancesByType(mockArgs)
+    })
+
+    afterEach(() => {
+      getInstancesByTypeStub.restore()
+    })
+
+    it('calls `getInstancesByType`', () => expect(getInstancesByTypeStub).to.be.calledWith(mockArgs))
+
+    it('returns the number of instances', () => expect(returnValue).to.equal('mock length'))
   })
 })
