@@ -43,25 +43,21 @@ const serviceData = proxyquire('~/fb-editor-node/service-data/service-data', {
 
 describe('~/fb-editor-node/service-data/service-data', () => {
   describe('`loadServiceData()`', () => {
-    let thenStub
-
     const {
       loadServiceData
     } = serviceData
 
     let returnValue
 
-    beforeEach(() => {
-      thenStub = sinon.stub().returns(mockServiceData)
+    beforeEach(async () => {
+      loadServiceDataStub.returns(mockServiceData)
 
-      loadServiceDataStub.returns({then: thenStub})
-
-      returnValue = loadServiceData()
+      returnValue = await loadServiceData()
     })
 
     it('calls `loadServiceData`', () => expect(loadServiceDataStub).to.be.called)
 
-    it('calls `then`', () => expect(thenStub).to.be.calledWith(sinon.match.typeOf('function')))
+    it('calls `initRoutes', () => expect(initRoutesStub).to.be.called)
 
     it('returns the service data', () => expect(returnValue).to.equal(mockServiceData))
   })
@@ -71,33 +67,41 @@ describe('~/fb-editor-node/service-data/service-data', () => {
       getServiceSchemaCategories
     } = serviceData
 
+    let sortStub
+    let mockArray
+    let reduceStub
+    let valuesStub
+    const mockServiceSchemas = {}
     let returnValue
-    const mockSchemas = {}
-    let forEachStub
-    let keysStub
 
     beforeEach(() => {
-      forEachStub = sinon.stub()
+      sortStub = sinon.stub().returns([])
+      mockArray = {
+        sort: sortStub
+      }
+      reduceStub = sinon.stub().returns(mockArray)
 
-      keysStub = sinon.stub(global.Object, 'keys')
+      valuesStub = sinon.stub(global.Object, 'values')
         .returns({
-          forEach: forEachStub
+          reduce: reduceStub
         })
 
-      getServiceSchemasStub.returns(mockSchemas)
+      getServiceSchemasStub.returns(mockServiceSchemas)
 
       returnValue = getServiceSchemaCategories()
     })
 
     afterEach(() => {
-      keysStub.restore()
+      valuesStub.restore()
     })
 
     it('calls `getServiceSchemas`', () => expect(getServiceSchemasStub).to.be.called)
 
-    it('calls `Object.keys()`', () => expect(keysStub).to.be.calledWith(mockSchemas))
+    it('calls `Object.values()`', () => expect(valuesStub).to.be.calledWith(mockServiceSchemas))
 
-    it('iterates over the keys`', () => expect(forEachStub).to.be.calledWith(sinon.match.typeOf('function')))
+    it('iterates over the values`', () => expect(reduceStub).to.be.calledWith(sinon.match.typeOf('function')))
+
+    it('sorts the values', () => expect(sortStub).to.be.called)
 
     it('returns an array', () => expect(returnValue).to.be.an('array'))
   })
