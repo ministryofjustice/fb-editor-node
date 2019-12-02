@@ -82,7 +82,7 @@ describe('~/fb-editor-node/admin/common', () => {
     describe('The argument is not `true`', () => it('returns false', () => expect(toBoolean('false')).to.be.false))
   })
 
-  describe('`isConditionalBoolean`', () => {
+  describe('`isConditionalBoolean()`', () => {
     beforeEach(() => {
       lodashGetStub.reset()
     })
