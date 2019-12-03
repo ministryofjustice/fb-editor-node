@@ -67,13 +67,33 @@ describe('~/fb-editor-node/admin/common', () => {
   describe('`isArray()`', () => {
     describe('The argument is an array', () => it('returns true', () => expect(isArray([])).to.be.true))
 
-    describe('The argument is not an array', () => it('returns false', () => expect(isArray({})).to.be.false))
+    describe('The argument is not an array', () => {
+      describe('The argument is a string', () => it('returns false', () => expect(isArray('1')).to.be.false))
+
+      describe('The argument is a number', () => it('returns false', () => expect(isArray(1)).to.be.false))
+
+      describe('The argument is an object', () => it('returns false', () => expect(isArray({})).to.be.false))
+
+      describe('The argument is null', () => it('returns false', () => expect(isArray(null)).to.be.false))
+
+      describe('The argument is undefined', () => it('returns false', () => expect(isArray()).to.be.false))
+    })
   })
 
   describe('`isObject()`', () => {
     describe('The argument is an object', () => it('returns true', () => expect(isObject({})).to.be.true))
 
-    describe('The argument is not an object', () => it('returns false', () => expect(isObject(null)).to.be.false))
+    describe('The argument is not an object', () => {
+      describe('The argument is a string', () => it('returns false', () => expect(isObject('1')).to.be.false))
+
+      describe('The argument is a number', () => it('returns false', () => expect(isObject(1)).to.be.false))
+
+      describe('The argument is an array', () => it('returns false', () => expect(isObject([])).to.be.false))
+
+      describe('The argument is null', () => it('returns false', () => expect(isObject(null)).to.be.false))
+
+      describe('The argument is undefined', () => it('returns false', () => expect(isObject()).to.be.false))
+    })
   })
 
   describe('`toBoolean()`', () => {
