@@ -10,8 +10,7 @@ const {
   getUrlMatch,
   isUploadComponent,
   isUploadSummaryPage,
-  isUploadCheckPage,
-  isEntryPointStep
+  isUploadCheckPage
 } = require('~/fb-editor-node/admin/common/components/upload')
 
 describe('~/fb-editor-node/admin/common/components/upload', () => {
@@ -19,7 +18,6 @@ describe('~/fb-editor-node/admin/common/components/upload', () => {
   it('exports `isUploadComponent`', () => expect(isUploadComponent).to.be.a('function'))
   it('exports `isUploadCheckPage`', () => expect(isUploadCheckPage).to.be.a('function'))
   it('exports `isUploadSummaryPage`', () => expect(isUploadSummaryPage).to.be.a('function'))
-  it('exports `isEntryPointStep`', () => expect(isEntryPointStep).to.be.a('function'))
 
   describe('`getUrlMatch()`', () => it('returns a string', () => expect(getUrlMatch('/url-pattern')).to.equal('url-pattern')))
 
@@ -39,11 +37,5 @@ describe('~/fb-editor-node/admin/common/components/upload', () => {
     describe('The page is an Upload Summary page', () => it('returns true', () => expect(isUploadSummaryPage({_type: 'page.uploadSummary'}))))
 
     describe('The page is not an Upload Summary page', () => it('returns false', () => expect(isUploadSummaryPage({_type: 'mock page type'}))))
-  })
-
-  describe('`isEntryPointStep()`', () => {
-    describe('The page is an entry point step', () => it('returns true', () => expect(isEntryPointStep('mock step')({steps: ['mock step']}))))
-
-    describe('The page is not an entry point step', () => it('returns false', () => expect(isEntryPointStep('mock step')({steps: []}))))
   })
 })
