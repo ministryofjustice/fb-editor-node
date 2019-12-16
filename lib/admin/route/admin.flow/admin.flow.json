@@ -3,7 +3,7 @@
   "_type": "page.flow",
   "url": "/flow/:_id?",
   "heading": "Flow",
-  "flowstep": {},
+  "flowStep": {},
   "skipSkipComponents": true,
   "skipValidation": true
 }

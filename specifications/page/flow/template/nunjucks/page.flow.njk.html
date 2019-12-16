@@ -5,9 +5,9 @@
 {% block content %}
 <h1>{{ page.heading }}</h1>
 <div class="fb-flow-wrapper">
-{% for flowstep in page.flowsteps %}
+{% for flowStep in page.flowSteps %}
 <div class="fb-flow-container">
-{{ callMacro('flowstep', flowstep) }}
+{{ callMacro('flowStep', flowStep) }}
 </div>
 {% endfor %}
 </div>
@@ -388,7 +388,7 @@ ul.fb-conditions-list {
   display: inline-block;
   padding: 0;
   margin-right: 2rem;
-} 
+}
 .fb-page-parent {
   position: absolute;
   right: 8rem;
