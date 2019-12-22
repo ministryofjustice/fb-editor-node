@@ -6,67 +6,7 @@
 
 <link href="/assets/vendor/dragula/dragula.v3.7.2.css" media="screen" rel="stylesheet">
 <script src="/assets/vendor/dragula/dragula.v3.7.2.js"></script>
-<script type="text/javascript">
-const updateArray = () => {
-    const items = [].slice.call(document.querySelectorAll('.fb-array-item:not(.gu-mirror)'))
-      .map(item => JSON.parse(unescape(item.getAttribute('data-item-value'))))
-    document.querySelector('textarea').value = JSON.stringify(items, null, 2)
-    const button = document.querySelector('.fb-action-update')
-    button.style = ''
-    const addButton = document.querySelector('.fb-action-add')
-    addButton.style = 'display: none;'
-}
-const initDragula = (selector, itemSelector, $valueElement) => {
-  window.$valueElement = $valueElement
-  window.canMove = true
-  var itemContainer = document.querySelector(selector)
-  dragula([itemContainer], {
-    revertOnSpill: true,
-    ignoreInputTextSelection: true,
-    allowNestedContainers: true,
-    moves: function() {
-      return window.canMove
-    }
-  }).on('drop', (el) => {
-    updateArray()
-    // console.log('$valueElement.value', $valueElement.value)
-  })
-}
-
-const $hiddenValue = document.querySelector('[name=hiddenValue]')
-if ($hiddenValue.value) {
-  const $valueElementGroup = document.querySelector('[data-block-id="admin.instance.property--value"]')
-  //$valueElementGroup.style = 'display: none'
-  const $valueElement = $valueElementGroup.querySelector('textarea')
-  $valueElement.style = 'display: none'
-  //const $parent = $valueElementGroup.parentNode
-  const hiddenValue = JSON.parse($hiddenValue.value)
-  if (Array.isArray(hiddenValue)) {
-    const button = document.querySelector('.fb-action-update')
-    button.style = 'display:none;'
-    let itemsList = ''
-    hiddenValue.forEach(item => {
-      const itemData = escape(JSON.stringify(item.data))
-      const removeString = typeof item.data === 'object' ? 'Delete' : 'Remove'
-      itemsList += `<div class="fb-array-item container govuk-prose-scope" data-item-value="${itemData}"><div><p class="fb-array-item--title">${item.title}</p><p class="fb-array-item--id"><a href="${item.url}">${item._id}</a></p><p class="fb-array-item--remove govuk-button fb-action-secondary fb-action-remove">${removeString} <span class="">the item</span></p></div></div>`
-    })
-    itemsList = `<div class="fb-array-items">${itemsList}</div>`
-    $valueElementGroup.insertAdjacentHTML('afterend', itemsList);
-    //$parent.innerHTML += itemsList
-    initDragula('.fb-array-items', '.fb-array-item', $valueElement)
-    const removeItems = [].slice.call(document.querySelectorAll('.fb-array-item--remove'))
-    removeItems.forEach(removeItem => {
-      removeItem.addEventListener('click', () => {
-        const fbArrayItem = removeItem.parentNode.parentNode
-        fbArrayItem.parentNode.removeChild(fbArrayItem)
-        updateArray()
-      })
-    })
-  }
-  //$parent.insertBefore(x, $valueElement)
-}
-
-</script>
+<script src="/assets/javascripts/page/admin.property.items-0.0.169.js"></script>
 <style type="text/css">
 .fb-array-items {
   margin: 0 0 2rem 0;
