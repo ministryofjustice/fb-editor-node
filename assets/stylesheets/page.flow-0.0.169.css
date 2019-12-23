@@ -33,14 +33,6 @@ html {
   margin-top: 20rem
 }
 
-.fb-step-skip-container {
-  display: inline-block;
-  vertical-align: top;
-  padding-bottom: 300px;
-  position: relative;
-  z-index: 1
-}
-
 .fb-flow-container > .fb-step-container {
   margin: 100px 200px 0 0
 }
@@ -224,6 +216,14 @@ ul.fb-conditions-list {
   right: -114px;
   top: -1px;
   border-width: 5px
+}
+
+.fb-step-skip-container {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: top;
+  padding-bottom: 300px
 }
 
 .fb-step-skip-container-line,
@@ -465,8 +465,7 @@ ul.fb-conditions-list {
 }
 
 .fb-page-url--label {
-  font-weight: 700;
-  xpadding-right: .5rem
+  font-weight: 700
 }
 
 header.govuk-header {

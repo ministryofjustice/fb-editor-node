@@ -19,8 +19,7 @@
 
 .fb-editor-liveheader a:hover {
   border-color: rgba(244,160,56,.98);
-  background-color: rgba(244,160,56,.98);
-  xcolor: #fff!important
+  background-color: rgba(244,160,56,.98)
 }
 
 .fb-editor-header {
@@ -270,7 +269,6 @@ li.fb-navigation-mode-current:hover {
   color: #2b8cc4;
   font-size: 2rem;
   position: relative;
-  Xtop: .5rem;
   line-height: .5
 }
 
@@ -301,10 +299,6 @@ li.fb-navigation-mode-current:hover {
     text-align: right
   }
 
-  .PreviewSummary__links .fb-preview-next a {
-    xpadding: 0 2rem 0 0
-  }
-
   .PreviewSummary__links p:before {
     color: #005ea5;
     font-size: 2rem;
@@ -316,10 +310,6 @@ li.fb-navigation-mode-current:hover {
 
   .PreviewSummary__links .fb-preview-previous:before {
     left: 1rem
-  }
-
-  .PreviewSummary__links .fb-preview-next {
-    xfloat: right
   }
 
   .PreviewSummary__links .fb-preview-next:before {
@@ -377,7 +367,6 @@ button.govuk-button.fb-editor-button {
   content: "+";
   display: inline-block;
   font-size: 2rem;
-  line-height: .5;
   position: absolute;
   left: -1px;
   top: -1px;

@@ -29,18 +29,8 @@ main.govuk-main-wrapper {
   top: 50%
 }
 
-.fb-block-checkboxes,
-.fb-block-date,
-.fb-block-radios,
-.fb-block-select,
-.govuk-fieldset,
-.govuk-form-group {
-  XXposition: relative
-}
-
 .fb-block-instance-properties {
   position: absolute;
-  xmargin-top: -.25rem;
   z-index: 99999999;
   margin-left: 0;
   left: -4rem;
@@ -69,7 +59,6 @@ main.govuk-main-wrapper {
   margin: 0;
   padding: 0;
   display: none;
-  Xborder: solid 1px #005ea5;
   box-shadow: 1px 1px 0 #005ea5,-1px 1px 0 #005ea5,-1px -1px 0 #005ea5,1px -1px 0 #005ea5
 }
 
@@ -172,7 +161,6 @@ li.fb-block-instance--delete:hover {
   margin-top: 0
 }
 
-.XXXgovuk-fieldset > .fb-block-instance,
 .govuk-date-input > .fb-block-instance {
   top: 0
 }
