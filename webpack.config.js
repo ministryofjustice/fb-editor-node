@@ -12,19 +12,19 @@ const TerserPlugin = require('terser-webpack-plugin')
 const {
   sourcePath,
   targetPath
-} = require('./src/paths')
+} = require('./build/paths')
 
 const buildSourcePath = path.join(sourcePath, 'js')
 const buildTargetPath = path.join(targetPath, 'javascripts')
 
 const {
   version,
-	/*
-	 *  Resolves module aliases in IDEs (WebStorm, etc)
-	 *
-	 *  For runtime module alias resolution see
-	 *  https://www.npmjs.com/package/@ministryofjustice/module-alias
-	 */
+  /*
+   *  Resolves module aliases in IDEs (WebStorm, etc)
+   *
+   *  For runtime module alias resolution see
+   *  https://www.npmjs.com/package/@ministryofjustice/module-alias
+   */
   _moduleAliases
 } = require('./package')
 
@@ -37,11 +37,12 @@ module.exports = () => ({
   },
   entry: {
     app: path.join(buildSourcePath, 'app.js'),
-    'page/admin': path.join(buildSourcePath, 'page/admin.js'),
-    'page/admin.property.booleanconditional': path.join(buildSourcePath, 'page/admin.property.booleanconditional.js'),
-    'page/admin.property.items': path.join(buildSourcePath, 'page/admin.property.items.js'),
-    'page/admin.property': path.join(buildSourcePath, 'page/admin.property.js'),
-    'page/editable': path.join(buildSourcePath, 'page/editable.js')
+    'admin-page': path.join(buildSourcePath, 'admin-page.js'),
+    'admin-page.property.booleanconditional': path.join(buildSourcePath, 'admin-page.property.booleanconditional.js'),
+    'admin-page.property.items': path.join(buildSourcePath, 'admin-page.property.items.js'),
+    'admin-page.property': path.join(buildSourcePath, 'admin-page.property.js'),
+    'page.editable': path.join(buildSourcePath, 'page.editable.js'),
+    'page.flow': path.join(buildSourcePath, 'page.flow.js')
   },
   output: {
     path: buildTargetPath,

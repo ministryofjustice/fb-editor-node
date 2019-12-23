@@ -6,11 +6,12 @@ const {
   cssClean: buildCssClean,
   css: buildCss,
   cssWatch: buildCssWatch
-} = require('./src/gulp/build')
+} = require('./build/gulp/build')
 
 const {
+  specifications: transformSpecifications,
   templates: transformTemplates
-} = require('./src/gulp/transform')
+} = require('./build/gulp/transform')
 
 gulp
   .task('build:css:clean', buildCssClean)
@@ -22,16 +23,19 @@ gulp
   .task('build:css:watch', gulp.series('build:css', buildCssWatch))
 
 gulp
-  .task('build:clean', gulp.series('build:fonts:clean', 'build:images:clean', 'build:css:clean'))
+  .task('build:clean', gulp.series('build:css:clean'))
 
 gulp
-  .task('build', gulp.series('build:fonts', 'build:images', 'build:css'))
+  .task('build', gulp.series('build:css'))
 
 gulp
-  .task('build:watch', gulp.parallel('build:fonts:watch', 'build:images:watch', 'build:css:watch'))
+  .task('build:watch', gulp.parallel('build:css:watch'))
+
+gulp
+  .task('transform:specifications', transformSpecifications)
 
 gulp
   .task('transform:templates', transformTemplates)
 
 gulp
-  .task('transform', gulp.series('transform:templates'))
+  .task('transform', gulp.series('transform:templates', 'transform:specifications'))
