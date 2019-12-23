@@ -29,7 +29,7 @@
     "transform:templates": "npm run gulp -- transform:templates",
     "transform:specifications": "npm run gulp -- transform:specifications",
     "gulp": "gulp --color",
-    "pre-commit": "npm run build && npm run transform"
+    "pre-commit": "npm run build && npm run transform && git add assets templates specifications"
   },
   "author": "Form Builder Team <form-builder-team@digital.justice.gov.uk>",
   "repository": {
