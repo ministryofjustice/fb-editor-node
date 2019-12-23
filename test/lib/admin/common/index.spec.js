@@ -26,14 +26,14 @@ const {
   getSchemaProperties,
   transformValueForComparison,
   transformValueToDataType
-} = proxyquire('~/fb-editor-node/admin/common', {
+} = proxyquire('~/fb-editor-node/lib/admin/common', {
   'lodash.get': lodashGetStub,
-  '~/fb-editor-node/service-data/service-data': {
+  '~/fb-editor-node/lib/service-data/service-data': {
     getServiceSchema: getServiceSchemaStub
   }
 })
 
-describe('~/fb-editor-node/admin/common', () => {
+describe('~/fb-editor-node/lib/admin/common', () => {
   it('exports `getUrlFromPageData`', () => expect(getUrlFromPageData).to.be.a('function'))
   it('exports `isArray`', () => expect(isArray).to.be.a('function'))
   it('exports `isObject`', () => expect(isObject).to.be.a('function'))
