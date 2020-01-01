@@ -10,7 +10,8 @@
     "start": "node bin/start",
     "lint": "eslint lib test",
     "lint:fix": "eslint lib test --fix",
-    "test": "mocha test --recursive"
+    "test": "mocha test --recursive",
+    "pre-commit": "npm run lint"
   },
   "author": "Form Builder Team <form-builder-team@digital.justice.gov.uk>",
   "repository": {
