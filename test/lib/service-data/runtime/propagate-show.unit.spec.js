@@ -8,12 +8,12 @@ const {
 
 const {
   propagate
-} = require('~/fb-editor-node/lib/runtime/propagate-show')
+} = require('~/fb-editor-node/lib/service-data/runtime/propagate-show')
 
-const mockInstances = require('~/fb-editor-node/mock/propagate')
+const mockInstances = require('~/fb-editor-node/mock/service-data/runtime/propagate')
 const mockExpectedInstances = require('./propagate')
 
-describe('~/fb-editor-node/lib/runtime/propagate-show', () => {
+describe('~/fb-editor-node/lib/service-data/runtime/propagate-show', () => {
   describe('Always', () => {
     describe('`propagate`', () => {
       it('is a function', () => {

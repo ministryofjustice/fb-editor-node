@@ -9,7 +9,7 @@ const {
 const {
   getEntryPointKeys,
   getEntryPointInstances
-} = require('~/fb-editor-node/lib/runtime/entry-points')
+} = require('~/fb-editor-node/lib/service-data/runtime/entry-points')
 
 const mockEntryPointOne = {
   _id: 'entry-point-one',
@@ -45,7 +45,7 @@ const mockSteps = {
   'entry-point-two': mockEntryPointTwo
 }
 
-describe('~/fb-editor-node/lib/runtime/entry-points', () => {
+describe('~/fb-editor-node/lib/service-data/runtime/entry-points', () => {
   describe('Always', () => {
     describe('`getEntryPointKeys`', () => {
       it('is a function', () => {
