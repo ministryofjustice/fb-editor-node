@@ -31,7 +31,7 @@ const mockServiceData = {
   getServiceInstances: getServiceInstancesStub
 }
 
-const serviceData = proxyquire('~/fb-editor-node/service-data/service-data', {
+const serviceData = proxyquire('~/fb-editor-node/lib/service-data/service-data', {
   jsonpath: {
     query: queryStub
   },
@@ -41,7 +41,7 @@ const serviceData = proxyquire('~/fb-editor-node/service-data/service-data', {
   }
 })
 
-describe('~/fb-editor-node/service-data/service-data', () => {
+describe('~/fb-editor-node/lib/service-data/service-data', () => {
   describe('`loadServiceData()`', () => {
     const {
       loadServiceData

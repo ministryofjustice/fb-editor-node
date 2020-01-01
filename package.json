@@ -11,7 +11,7 @@
     "lint": "eslint lib test",
     "lint:fix": "eslint lib test --fix",
     "test": "mocha test --recursive",
-    "pre-commit": "npm run lint"
+    "pre-commit": "npm run lint && npm test"
   },
   "author": "Form Builder Team <form-builder-team@digital.justice.gov.uk>",
   "repository": {
@@ -41,6 +41,8 @@
     "sinon-chai": "^3.4.0"
   },
   "_moduleAliases": {
-    "~/fb-editor-node": "./lib"
+    "~/fb-editor-node": ".",
+    "~/fb-editor-node/test": "./test",
+    "~/fb-editor-node/mock": "./test/.mock"
   }
 }
