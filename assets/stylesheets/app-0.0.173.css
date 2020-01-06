@@ -1,0 +1,385 @@
+@charset "UTF-8";
+
+.fb-editor-liveheader {
+  position: absolute;
+  right: 5rem;
+  top: .375rem
+}
+
+.fb-editor-liveheader a {
+  background-color: #f47738;
+  color: #fff!important;
+  font-size: 24px;
+  border: .125rem solid #f47738;
+  border-radius: 2rem;
+  padding: .125rem 1rem;
+  display: block;
+  text-decoration: none
+}
+
+.fb-editor-liveheader a:hover {
+  border-color: rgba(244,160,56,.98);
+  background-color: rgba(244,160,56,.98)
+}
+
+.fb-editor-header {
+  background: #000;
+  color: #fff;
+  border-bottom: 10px solid #f47738;
+  display: table;
+  width: 100%
+}
+
+.fb-editor-header > * {
+  padding: .5rem;
+  display: table-cell;
+  vertical-align: middle;
+  white-space: nowrap
+}
+
+.fb-editor-header a {
+  color: #fff
+}
+
+.fb-editorheader--branding {
+  width: 1px;
+  position: relative;
+  top: .25rem;
+  padding-right: 2rem
+}
+
+.fb-editorheader--form {
+  font-weight: 400
+}
+
+.fb-editorheader--navigation {
+  text-align: right;
+  padding-right: 2rem
+}
+
+.fb-editorheader--navigation ul {
+  margin: 0;
+  padding: 0
+}
+
+.fb-editorheader--navigation .govuk-header__link {
+  font-size: 24px;
+  font-weight: 400
+}
+
+@media (min-width:800px) {
+  .content-wrapper:not(.content-wrapper-preview) {
+    background-color: #bfc1c3;
+    padding: 0 10rem 3rem
+  }
+
+  .content-wrapper:not(.content-wrapper-preview) .content-wrapper--inner {
+    padding: 0 100px;
+    max-width: 960px;
+    margin: 0 auto
+  }
+}
+
+.content-wrapper--inner {
+  background-color: #fff
+}
+
+.content-wrapper-edit .content-wrapper--inner,
+.content-wrapper-preview.content-wrapper {
+  min-height: 85vh
+}
+
+.content-wrapper-edit .govuk-back-link {
+  display: none
+}
+
+@media (max-width:800px) {
+  .govuk-width-container {
+    margin: 0 1rem -10px 5.5rem
+  }
+}
+
+.fb-navigation {
+  background: #f8f8f8;
+  margin: 0;
+  padding: 0 .5rem;
+  overflow: hidden;
+  border-bottom: 1px solid #b3b9be
+}
+
+.fb-navigation ul {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: flex
+}
+
+.fb-navigation li {
+  list-style-type: none
+}
+
+.fb-navigation .fb-navigation-current a,
+.fb-navigation a {
+  color: #005ea5;
+  text-decoration: none;
+  border-bottom: .25rem solid transparent;
+  padding: .75rem 1rem .5rem
+}
+
+.fb-navigation li:hover a {
+  color: #2b8cc4;
+  border-bottom-color: #2b8cc4
+}
+
+.fb-navigation .fb-navigation-current a {
+  border-bottom-color: #005ea5
+}
+
+.fb-navigation-modes {
+  position: absolute;
+  right: 1.5rem;
+  margin-top: -2.75rem;
+  border: 1px solid #797979
+}
+
+.fb-navigation-modes ul {
+  display: table;
+  padding: 0;
+  margin: 0
+}
+
+.fb-navigation-modes li {
+  display: inline-block;
+  padding: 0;
+  font-weight: 700
+}
+
+.fb-navigation-instance,
+.fb-navigation-live {
+  display: none!important
+}
+
+.fb-navigation-modes li + li {
+  border-left: 1px solid #797979
+}
+
+.fb-navigation-modes li a,
+li.fb-navigation-mode-current {
+  display: inline-block;
+  padding: .25rem 1rem;
+  min-width: 6rem;
+  text-align: center;
+  font-size: 1.1875rem;
+  background-color: #dee0e2;
+  color: #71777b;
+  text-decoration: none
+}
+
+.fb-navigation-modes li a:hover {
+  color: #fff;
+  background-color: #005ea5
+}
+
+li.fb-navigation-mode-current,
+li.fb-navigation-mode-current:hover {
+  background-color: #fff;
+  color: #005ea5
+}
+
+.adminBack {
+  margin: 0;
+  padding: .75rem 1.5rem;
+  border-bottom: 1px solid #b3b9be
+}
+
+.adminBack a,
+.adminBack a:visited {
+  color: #005ea5
+}
+
+.adminBack a:before {
+  content: "‹ ";
+  font-size: 1rem;
+  font-weight: 700
+}
+
+@media (min-width:40.0625em) {
+  .fb-navigation li,
+  .fb-navigation li a {
+    display: inline-block
+  }
+
+  .fb-navigation li a {
+    font-size: 1.1875rem;
+    font-weight: 700
+  }
+}
+
+.fb-action--add--component {
+  display: table
+}
+
+.PreviewSummary-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 10px solid #f47738;
+  background-color: #f8f8f8;
+  z-index: 100000000
+}
+
+.PreviewSummary {
+  padding: 1rem 0;
+  margin: 0
+}
+
+.govuk-prose-scope .PreviewSummary__heading {
+  font-weight: 700;
+  font-size: .75rem;
+  margin: 0 0 .5rem
+}
+
+.PreviewSummary__links span {
+  position: absolute;
+  left: -9999px;
+  width: 0;
+  height: 0;
+  overflow: hidden
+}
+
+.PreviewSummary__links .fb-preview-previous:before {
+  content: "‹"
+}
+
+.PreviewSummary__links .fb-preview-next:before {
+  content: "›"
+}
+
+.PreviewSummary__links {
+  margin: 0
+}
+
+.PreviewSummary__links p {
+  margin: 0;
+  font-size: 1rem
+}
+
+.PreviewSummary__links p:before {
+  color: #2b8cc4;
+  font-size: 2rem;
+  position: relative;
+  line-height: .5
+}
+
+@media (min-width:40.0625em) {
+  .PreviewSummary__links {
+    width: 100%;
+    overflow: hidden;
+    display: table
+  }
+
+  .PreviewSummary__links p {
+    display: table-cell;
+    width: 50%;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 2.25rem
+  }
+
+  .PreviewSummary__links a {
+    position: relative;
+    z-index: 1;
+    color: #005ea5
+  }
+
+  .PreviewSummary__links p.fb-preview-next {
+    padding-left: 0;
+    padding-right: 2.25rem;
+    text-align: right
+  }
+
+  .PreviewSummary__links p:before {
+    color: #005ea5;
+    font-size: 2rem;
+    font-weight: 700;
+    position: absolute;
+    top: .375rem;
+    line-height: .325
+  }
+
+  .PreviewSummary__links .fb-preview-previous:before {
+    left: 1rem
+  }
+
+  .PreviewSummary__links .fb-preview-next:before {
+    right: 1rem
+  }
+}
+
+.govuk-button.fb-editor-button {
+  background: #fff;
+  color: #005ea5;
+  border: 1px solid #005ea5;
+  border-radius: 2rem;
+  padding: .425rem 1rem 0;
+  display: inline-block;
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  text-decoration: none;
+  height: 2rem;
+  box-sizing: border-box;
+  box-shadow: unset
+}
+
+button.govuk-button.fb-editor-button {
+  padding-top: .125rem
+}
+
+.fb-editor-button * {
+  display: inline-block;
+  margin: 0;
+  padding: 0
+}
+
+.fb-editor-button:hover {
+  color: #fff;
+  background: #005ea5
+}
+
+.fb-editor-button:hover * {
+  color: #fff
+}
+
+.fb-editor-button.fb-block--add {
+  margin-left: -2.5rem;
+  padding-left: 2.5rem
+}
+
+.admin-content .fb-editor-button.fb-block--add {
+  margin-left: 0
+}
+
+.fb-block--add:before {
+  content: "+";
+  display: inline-block;
+  font-size: 2rem;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  border: 1px solid #005ea5;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  text-align: center;
+  line-height: 1.125;
+  box-sizing: border-box
+}
+
+.fb-block--add:active:before {
+  top: 0
+}
+/*# sourceMappingURL=app-0.0.173.css.map */

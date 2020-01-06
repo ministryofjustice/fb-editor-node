@@ -11,9 +11,9 @@ const {
   isUploadComponent,
   isUploadSummaryPage,
   isUploadCheckPage
-} = require('~/fb-editor-node/admin/common/components/upload')
+} = require('~/fb-editor-node/lib/admin/common/components/upload')
 
-describe('~/fb-editor-node/admin/common/components/upload', () => {
+describe('~/fb-editor-node/lib/admin/common/components/upload', () => {
   it('exports `getUrlMatch`', () => expect(getUrlMatch).to.be.a('function'))
   it('exports `isUploadComponent`', () => expect(isUploadComponent).to.be.a('function'))
   it('exports `isUploadCheckPage`', () => expect(isUploadCheckPage).to.be.a('function'))
