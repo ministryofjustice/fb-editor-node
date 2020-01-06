@@ -1,0 +1,74 @@
+.gu-mirror {
+  position: fixed!important;
+  margin: 0!important;
+  z-index: 9999!important;
+  opacity: .8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80)
+}
+
+.gu-hide {
+  display: none!important
+}
+
+.gu-unselectable {
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important
+}
+
+.gu-transit {
+  opacity: .2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20)
+}
+
+.fb-array-items {
+  margin: 0 0 2rem;
+  padding: 0
+}
+
+.fb-array-item {
+  position: relative;
+  cursor: move
+}
+
+.fb-array-item > div {
+  padding: .5rem;
+  list-style: none;
+  border: 2px solid #000;
+  border-left-width: 1rem;
+  margin-bottom: .5rem
+}
+
+.fb-array-item > div:hover {
+  background: #f6f6f6
+}
+
+.fb-array-item.gu-mirror {
+  height: auto!important
+}
+
+p.fb-array-item--title {
+  margin: 0
+}
+
+p.fb-array-item--id {
+  margin: 0;
+  font-size: .75rem;
+  line-height: 1
+}
+
+p.fb-array-item--remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1rem
+}
+
+p.fb-array-item--remove span {
+  position: absolute;
+  left: -9999px
+}
+/*# sourceMappingURL=admin-page.property.items-0.0.173.css.map */

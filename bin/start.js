@@ -9,7 +9,7 @@ process.env.APP_DIR = APP_DIR
 
 const start = async () => {
   try {
-    const server = require('~/fb-editor-node/server/server')
+    const server = require('~/fb-editor-node/lib/server/server')
     await server.start()
   } catch (e) {
     // eslint-disable-next-line no-console
