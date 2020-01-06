@@ -1,0 +1,81 @@
+.booleanConditionalOptions {
+  margin-bottom: 1rem;
+}
+
+.condition-individual {
+  background: #fff;
+  position: relative;
+}
+
+.conditions-block .condition-individual {
+  padding: 1rem;
+}
+
+.fb-action-secondary:hover {
+  text-decoration: underline;
+}
+
+.fb-action--add-condition {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.fb-action--remove-condition {
+  font-size: 75%;
+  margin: 0;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  visibility: hidden;
+}
+
+#conditions .fb-action--revert-conditions,
+#conditions .fb-action--convert-condition {
+  font-size: 75%;
+  margin: 0;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  visibility: hidden;
+}
+
+#conditions .conditions-block:hover > .fb-action--revert-conditions,
+#conditions .condition-individual:hover > .fb-action-secondary {
+  visibility: visible;
+}
+
+// stylelint-disable-next-line no-descending-specificity
+#conditions > div > .fb-action--revert-conditions,
+#conditions > div .fb-action--convert-condition {
+  top: -0.25rem;
+}
+
+.fb-action-secondary:active { // stylelint-disable-line no-descending-specificity
+  margin-top: 2px;
+}
+
+.conditions-block {
+  background: #eee;
+  padding: 1rem 1rem 0.25rem 1rem;
+  position: relative;
+}
+
+.conditions-block .conditions-block {
+  background: #ddd;
+}
+
+.conditions-block .conditions-block .conditions-block {
+  background: #ccc;
+}
+
+.conditions-delimiter {
+  margin: 1rem 0;
+}
+
+#conditionsToggle {
+  text-align: right;
+}
+
+#conditionsToggle .fb-action-secondary { // stylelint-disable-line no-descending-specificity
+  font-size: 75%;
+}
