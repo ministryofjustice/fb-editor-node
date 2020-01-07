@@ -1,6 +1,6 @@
 {
   "name": "@ministryofjustice/fb-editor-node",
-  "version": "0.0.173",
+  "version": "0.0.175",
   "engines": {
     "node": "12.4.0"
   },
@@ -90,7 +90,9 @@
     "webpack-merge": "^4.2.2"
   },
   "_moduleAliases": {
-    "~/fb-editor-node": "."
+    "~/fb-editor-node": ".",
+    "~/fb-editor-node/test": "./test",
+    "~/fb-editor-node/mock": "./test/.mock"
   },
   "husky": {
     "hooks": {

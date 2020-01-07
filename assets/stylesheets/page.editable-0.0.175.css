@@ -1,0 +1,332 @@
+.govuk-grid-column-two-thirds,
+main.govuk-main-wrapper {
+  position: relative
+}
+
+.fb-hover {
+  background-color: rgba(44,141,191,.125)
+}
+
+.fb-block {
+  position: relative
+}
+
+.fb-block-edit-container {
+  position: absolute;
+  margin-left: -2.5rem;
+  margin-top: 0;
+  width: 4rem;
+  height: 4rem;
+  z-index: 99999999
+}
+
+.govuk-inset-text .fb-block-edit-container {
+  margin-left: -4rem
+}
+
+.govuk-warning-text .fb-block-edit-container {
+  margin-top: -1rem;
+  top: 50%
+}
+
+.fb-block-instance-properties {
+  position: absolute;
+  z-index: 99999999;
+  margin-left: 0;
+  left: -4rem;
+  background: #fff
+}
+
+.fb-mode-edit > .fb-block-instance-properties {
+  margin-top: -1.5rem
+}
+
+.govuk-radios__conditional .fb-block-instance-properties {
+  margin-left: -3.5rem
+}
+
+.fb-block-instance-properties:hover {
+  z-index: 999999999
+}
+
+.fb-block-instance-properties-heading {
+  position: absolute;
+  top: 0;
+  left: -1rem
+}
+
+.fb-mode-edit .fb-block-instance-properties ul {
+  margin: 0;
+  padding: 0;
+  display: none;
+  box-shadow: 1px 1px 0 #005ea5,-1px 1px 0 #005ea5,-1px -1px 0 #005ea5,1px -1px 0 #005ea5
+}
+
+.fb-block-instance-properties:hover ul {
+  display: block
+}
+
+.fb-mode-edit .fb-block-instance-properties li {
+  list-style-type: none;
+  margin: 0;
+  white-space: nowrap;
+  padding: 0 .5rem 0 1rem;
+  background: #fff;
+  line-height: 1.375
+}
+
+.fb-block-instance-properties li + li.fb-block-instance--all,
+.fb-block-instance-properties li.fb-block-instance--delete {
+  margin-top: 1rem
+}
+
+.fb-block-instance-properties li .fb-block-instance-properties-type,
+.fb-block-instance-properties li a,
+.fb-block-instance-properties li button {
+  text-decoration: none;
+  display: block;
+  border: none;
+  padding: .325rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #005ea5;
+  width: 100%;
+  text-align: left;
+  background: 0 0
+}
+
+.fb-block-instance-properties li.fb-block-instance-properties-type-item {
+  background: #005ea5
+}
+
+.fb-block-instance-properties li .fb-block-instance-properties-type {
+  color: #fff
+}
+
+.fb-block-instance-properties li:hover {
+  background: #005ea5
+}
+
+li.fb-block-instance--delete:hover {
+  background: #b10e1e
+}
+
+.fb-block-instance-properties li:hover a,
+.fb-block-instance-properties li:hover button {
+  color: #fff
+}
+
+.fb-block-instance-properties .fb-block-edit {
+  font-size: 1.325rem
+}
+
+[data-block-type=fieldset] > .fb-block-instance-properties,
+[data-block-type=group] > .fb-block-instance-properties,
+[data-block-type=section] > .fb-block-instance-properties {
+  margin-top: -2.5rem
+}
+
+.XXfb-mode-edit :not(.fb-repeatable-item) [data-block-type=fieldset],
+.fb-mode-edit [data-block-type=group]:not(.fb-repeatable-item),
+.fb-mode-edit [data-block-type=section] {
+  outline: 1px dotted #000;
+  padding-bottom: 3rem;
+  margin-bottom: -3rem;
+  outline-offset: .25rem;
+  padding-top: 2rem;
+  margin-top: -.75rem;
+  margin-right: -1rem;
+  position: relative
+}
+
+.fb-mode-edit [data-block-type=fieldset]:before,
+.fb-mode-edit [data-block-type=group]:before,
+.fb-mode-edit [data-block-type=section]:before {
+  content: attr(data-block-type);
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: .25rem;
+  left: -.25rem;
+  margin-left: -2px;
+  font-size: 75%;
+  text-transform: uppercase;
+  background: #999;
+  color: #fff;
+  padding: 0 .5rem
+}
+
+[data-block-type=fieldsset] + .fb-editor-button,
+[data-block-type=group] + .fb-editor-button,
+[data-block-type=section] + .fb-editor-button {
+  margin-top: 0
+}
+
+.govuk-date-input > .fb-block-instance {
+  top: 0
+}
+
+.govuk-checkboxes__conditional .fb-block-property,
+.govuk-radios .fb-block-property {
+  margin-left: -6rem
+}
+
+.govuk-checkboxes__conditional .fb-block-instance-properties {
+  margin-left: -3.5rem
+}
+
+.govuk-checkboxes__label > .fb-block-property,
+.govuk-radios__label > .fb-block-property {
+  margin-top: -.5rem
+}
+
+.govuk-checkboxes__label > .fb-block-property {
+  margin-left: -6rem
+}
+
+.govuk-checkboxes__hint > .fb-block-property,
+.govuk-radios__hint > .fb-block-property {
+  margin-top: -.375rem
+}
+
+.govuk-checkboxes__hint > .fb-block-property {
+  margin-left: -6rem
+}
+
+.fb-block-edit {
+  position: absolute;
+  font-size: 1.5rem;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none!important;
+  background-color: #fff;
+  color: #005ea5!important;
+  border-radius: 50%;
+  border: 1px solid #005ea5;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-weight: 400
+}
+
+.fb-block-instance-properties:hover > .fb-block-edit,
+a.fb-block-edit:hover {
+  background-color: #005ea5!important;
+  color: #fff!important
+}
+
+details .fb-block-edit {
+  margin-left: -1.5rem
+}
+
+details .fb-block-instance-properties .fb-block-edit {
+  margin-left: 0
+}
+
+details .fb-block-instance-properties {
+  margin-top: -1.875rem
+}
+
+.fb-block-inset .fb-block-instance-properties {
+  margin-left: -.625rem
+}
+
+.fb-block-warning .fb-block-instance-properties {
+  margin-top: 1rem
+}
+
+.fb-flow-wrapper .fb-block-edit {
+  visibility: hidden
+}
+
+.fb-flow-wrapper .fb-hover > .fb-block-edit-container > .fb-block-edit,
+h2 .fb-block-edit {
+  visibility: visible
+}
+
+.fb-sectionHeading .fb-block-edit-container {
+  margin-top: -.5rem
+}
+
+h1 .fb-block-edit-container {
+  margin-top: 0
+}
+
+h2 .fb-block-edit-container {
+  margin-top: .25rem
+}
+
+.fb-block-instance-property-link {
+  position: absolute;
+  left: -3000px
+}
+
+.govuk-button > .fb-block-edit-container {
+  margin-left: -5.25rem;
+  margin-top: -.5rem
+}
+
+.fb-repeatable-item--delete.govuk-button > .fb-block-edit-container {
+  right: -4.5rem;
+  margin-left: 0
+}
+
+.fb-repeatable-item {
+  border: 1px solid #000;
+  box-shadow: 1px 1px 0 0 #fff,2px 2px 0 0 #000,3px 3px 0 0 #fff,4px 4px 0 0 #000,5px 5px 0 0 #fff,6px 6px 0 0 #fff,7px 7px 0 0 #fff,8px 8px 0 0 #fff;
+  padding: 5px 0 0 5px;
+  margin: -6px 0 2rem -6px
+}
+
+.repeatableMinMax {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: -.375rem
+}
+
+p.fb-group-repeatableSetting {
+  display: inline-block;
+  margin-left: 4rem;
+  margin-bottom: 0;
+  font-size: 1rem
+}
+
+p.fb-group-add {
+  margin-top: -3rem;
+  margin-bottom: 1rem
+}
+
+label.govuk-visually-hidden,
+legend.govuk-visually-hidden {
+  position: relative!important;
+  width: auto!important;
+  height: auto!important;
+  overflow: visible!important;
+  clip: unset!important;
+  --webkit-clip-path: unset!important;
+  -webkit-clip-path: unset!important;
+  clip-path: unset!important;
+  white-space: normal!important
+}
+
+label.govuk-visually-hidden:before,
+legend.govuk-visually-hidden:before {
+  position: absolute;
+  content: "Question is visually hidden";
+  background: #eee;
+  color: #000;
+  font-size: .75rem;
+  bottom: 100%
+}
+
+.fb-block-button,
+.govuk-back-link {
+  cursor: default!important;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important
+}
+/*# sourceMappingURL=page.editable-0.0.175.css.map */
