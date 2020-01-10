@@ -1,0 +1,1 @@
+{"version":3,"sources":["admin-page.property-0.0.178.scss"],"names":[],"mappings":"AAAA;AACE,OAAA","file":"admin-page.property-0.0.178.css","sourcesContent":[".govuk-textarea {\r\n  width: 100% !important;\r\n}\r\n\r\n"]}
