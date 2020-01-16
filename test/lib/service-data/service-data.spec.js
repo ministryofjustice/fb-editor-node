@@ -17,6 +17,7 @@ const loadServiceDataStub = sinon.stub()
 const getServiceSchemaStub = sinon.stub()
 const getServiceSchemasStub = sinon.stub()
 const getInstancePropertyStub = sinon.stub()
+const setInstancePropertyStub = sinon.stub()
 const getServiceInstancesStub = sinon.stub()
 
 const initRoutesStub = sinon.stub()
@@ -28,6 +29,7 @@ const mockServiceData = {
   getServiceSchema: getServiceSchemaStub,
   getServiceSchemas: getServiceSchemasStub,
   getInstanceProperty: getInstancePropertyStub,
+  setInstanceProperty: setInstancePropertyStub,
   getServiceInstances: getServiceInstancesStub
 }
 
@@ -425,6 +427,18 @@ describe('~/fb-editor-node/lib/service-data/service-data', () => {
 
         it('returns the instances', () => expect(returnValue).to.equal(mockInstances))
       })
+    })
+  })
+
+  describe('`deleteInstanceProperty()`', () => {
+    const {
+      deleteInstanceProperty
+    } = serviceData
+
+    it('calls `setInstanceProperty`', () => {
+      deleteInstanceProperty('mock id', 'mock property key')
+
+      expect(setInstancePropertyStub).to.be.calledWith('mock id', 'mock property key')
     })
   })
 
