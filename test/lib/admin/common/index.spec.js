@@ -22,7 +22,7 @@ const {
   isObject,
   toBoolean,
   isConditionalBoolean,
-  getInstancePropertyKey,
+  getPropertyKey,
   getSchemaProperties,
   transformValueForComparison,
   transformValueToDataType
@@ -39,7 +39,7 @@ describe('~/fb-editor-node/lib/admin/common', () => {
   it('exports `isObject`', () => expect(isObject).to.be.a('function'))
   it('exports `toBoolean`', () => expect(toBoolean).to.be.a('function'))
   it('exports `isConditionalBoolean`', () => expect(isConditionalBoolean).to.be.a('function'))
-  it('exports `getInstancePropertyKey`', () => expect(getInstancePropertyKey).to.be.a('function'))
+  it('exports `getPropertyKey`', () => expect(getPropertyKey).to.be.a('function'))
   it('exports `getSchemaProperties`', () => expect(getSchemaProperties).to.be.a('function'))
   it('exports `transformValueForComparison`', () => expect(transformValueForComparison).to.be.a('function'))
   it('exports `transformValueToDataType`', () => expect(transformValueToDataType).to.be.a('function'))
@@ -148,10 +148,10 @@ describe('~/fb-editor-node/lib/admin/common', () => {
     })
   })
 
-  describe('`getInstancePropertyKey()`', () => {
-    describe('`parentProperty` and `property` are defined', () => it('returns a string', () => expect(getInstancePropertyKey('parentProperty', 'property')).to.equal('parentProperty.property')))
+  describe('`getPropertyKey()`', () => {
+    describe('`parentProperty` and `property` are defined', () => it('returns a string', () => expect(getPropertyKey('parentProperty', 'property')).to.equal('parentProperty.property')))
 
-    describe('`parentProperty` is undefined and `property` is defined', () => it('returns a string', () => expect(getInstancePropertyKey(undefined, 'property')).to.equal('property')))
+    describe('`parentProperty` is undefined and `property` is defined', () => it('returns a string', () => expect(getPropertyKey(undefined, 'property')).to.equal('property')))
   })
 
   describe('`getSchemaProperties()`', () => {
