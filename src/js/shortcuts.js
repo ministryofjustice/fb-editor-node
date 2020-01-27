@@ -132,10 +132,10 @@ module.exports = {
       }
 
       const modifiers = {
-        shift: {wanted: false, pressed: false},
-        ctrl: {wanted: false, pressed: false},
-        alt: {wanted: false, pressed: false},
-        meta: {wanted: false, pressed: false} // Meta is Mac specific
+        shift: { wanted: false, pressed: false },
+        ctrl: { wanted: false, pressed: false },
+        alt: { wanted: false, pressed: false },
+        meta: { wanted: false, pressed: false } // Meta is Mac specific
       }
 
       if (e.ctrlKey) modifiers.ctrl.pressed = true

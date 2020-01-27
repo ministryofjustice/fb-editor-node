@@ -5,7 +5,7 @@ const {
   writeFile
 } = require('sacred-fs')
 
-const {version} = require('~/fb-editor-node/package')
+const { version } = require('~/fb-editor-node/package')
 
 const JAVASCRIPTS = /(assets\/javascripts\/.*-)\d+\.\d+\.\d+(.js)/g
 const STYLESHEETS = /(assets\/stylesheets\/.*-)\d+\.\d+\.\d+(.css)/g

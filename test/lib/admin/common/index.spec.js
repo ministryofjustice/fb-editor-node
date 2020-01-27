@@ -49,7 +49,7 @@ describe('~/fb-editor-node/lib/admin/common', () => {
       it('returns the function', () => {
         const mockGetUrl = () => 'mock get url'
 
-        return expect(getUrlFromPageData({pagesMethods: {getUrl: mockGetUrl}})).to.equal(mockGetUrl)
+        return expect(getUrlFromPageData({ pagesMethods: { getUrl: mockGetUrl } })).to.equal(mockGetUrl)
       })
     })
 
@@ -160,7 +160,7 @@ describe('~/fb-editor-node/lib/admin/common', () => {
     beforeEach(() => {
       mockProperties = {}
 
-      getServiceSchemaStub.returns({properties: mockProperties})
+      getServiceSchemaStub.returns({ properties: mockProperties })
     })
 
     afterEach(() => {
@@ -174,7 +174,7 @@ describe('~/fb-editor-node/lib/admin/common', () => {
       beforeEach(() => {
         mockParentProperties = {}
 
-        lodashGetStub.returns({properties: mockParentProperties})
+        lodashGetStub.returns({ properties: mockParentProperties })
 
         returnValue = getSchemaProperties('mock component type', 'mock parent.property')
       })
@@ -195,7 +195,7 @@ describe('~/fb-editor-node/lib/admin/common', () => {
       beforeEach(() => {
         mockParentProperties = {}
 
-        lodashGetStub.returns({properties: mockParentProperties})
+        lodashGetStub.returns({ properties: mockParentProperties })
 
         returnValue = getSchemaProperties('mock component type')
       })
@@ -213,7 +213,7 @@ describe('~/fb-editor-node/lib/admin/common', () => {
   describe('`transformValueForComparison()`', () => {
     describe('The argument is an array', () => it('serializes to JSON', () => expect(transformValueForComparison([1, 2, 3])).to.equal('[1,2,3]')))
 
-    describe('The argument is an object', () => it('serializes to JSON', () => expect(transformValueForComparison({a: 1, b: 2, c: 3})).to.equal('{"a":1,"b":2,"c":3}')))
+    describe('The argument is an object', () => it('serializes to JSON', () => expect(transformValueForComparison({ a: 1, b: 2, c: 3 })).to.equal('{"a":1,"b":2,"c":3}')))
 
     describe('The argument is a number', () => it('is transformed to a string', () => expect(transformValueForComparison(1)).to.equal('1')))
 
@@ -227,33 +227,33 @@ describe('~/fb-editor-node/lib/admin/common', () => {
   describe('`transformValueToDataType()`', () => {
     describe('The property type is `string`', () => {
       describe('The argument is a number', () => {
-        describe('1', () => it('is transformed to the string "1"', () => expect(transformValueToDataType(1, {property: {type: 'string'}}, 'property')).to.equal('1')))
+        describe('1', () => it('is transformed to the string "1"', () => expect(transformValueToDataType(1, { property: { type: 'string' } }, 'property')).to.equal('1')))
 
-        describe('0', () => it('is transformed to the string "0"', () => expect(transformValueToDataType(0, {property: {type: 'string'}}, 'property')).to.equal('0')))
+        describe('0', () => it('is transformed to the string "0"', () => expect(transformValueToDataType(0, { property: { type: 'string' } }, 'property')).to.equal('0')))
       })
     })
 
     describe('The property type is `number`', () => {
       describe('The argument is a number', () => {
-        describe('"1"', () => it('is transformed to the number 1', () => expect(transformValueToDataType('1', {property: {type: 'number'}}, 'property')).to.equal(1)))
+        describe('"1"', () => it('is transformed to the number 1', () => expect(transformValueToDataType('1', { property: { type: 'number' } }, 'property')).to.equal(1)))
 
-        describe('"0"', () => it('is transformed to the number 0', () => expect(transformValueToDataType('0', {property: {type: 'number'}}, 'property')).to.equal(0)))
+        describe('"0"', () => it('is transformed to the number 0', () => expect(transformValueToDataType('0', { property: { type: 'number' } }, 'property')).to.equal(0)))
       })
 
       describe('The argument is not a number', () => {
-        it('is transformed to NaN', () => expect(isNaN(transformValueToDataType('A', {property: {type: 'number'}}, 'property'))).to.be.true)
+        it('is transformed to NaN', () => expect(isNaN(transformValueToDataType('A', { property: { type: 'number' } }, 'property'))).to.be.true)
       })
     })
 
     describe('The property type is `boolean`', () => {
       describe('The argument is a string', () => {
-        describe('"true"', () => it('is transformed to a boolean true', () => expect(transformValueToDataType('true', {property: {type: 'boolean'}}, 'property')).to.be.true))
+        describe('"true"', () => it('is transformed to a boolean true', () => expect(transformValueToDataType('true', { property: { type: 'boolean' } }, 'property')).to.be.true))
 
-        describe('"false"', () => it('is transformed to a boolean false', () => expect(transformValueToDataType('false', {property: {type: 'boolean'}}, 'property')).to.be.false))
+        describe('"false"', () => it('is transformed to a boolean false', () => expect(transformValueToDataType('false', { property: { type: 'boolean' } }, 'property')).to.be.false))
       })
 
       describe('The argument is not a string', () => {
-        it('is transformed to false', () => expect(transformValueToDataType({}, {property: {type: 'boolean'}}, 'property')).to.be.false)
+        it('is transformed to false', () => expect(transformValueToDataType({}, { property: { type: 'boolean' } }, 'property')).to.be.false)
       })
     })
   })
