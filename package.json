@@ -38,7 +38,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@ministryofjustice/fb-runner-node": "0.1.30",
+    "@ministryofjustice/fb-runner-node": "0.1.34",
     "@ministryofjustice/module-alias": "^1.0.11",
     "ajv": "^6.11.0",
     "autosize": "^4.0.2",
@@ -88,7 +88,7 @@
     "sinon-chai": "^3.4.0",
     "stylelint": "^13.0.0",
     "stylelint-config-recommended-scss": "^4.1.0",
-    "stylelint-scss": "^3.13.0",
+    "stylelint-scss": "^3.14.0",
     "terser-webpack-plugin": "^2.3.2",
     "vinyl-paths": "^3.0.1",
     "webpack": "^4.41.5",
