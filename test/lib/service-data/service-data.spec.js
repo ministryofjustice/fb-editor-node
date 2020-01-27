@@ -121,7 +121,7 @@ describe('~/fb-editor-node/lib/service-data/service-data', () => {
     let returnValue
 
     beforeEach(() => {
-      getServiceSchemaStub.returns({title: 'mock service schema title'})
+      getServiceSchemaStub.returns({ title: 'mock service schema title' })
 
       returnValue = getSchemaTitle('mock type')
     })
@@ -454,7 +454,7 @@ describe('~/fb-editor-node/lib/service-data/service-data', () => {
     let returnValue
 
     beforeEach(() => {
-      getInstancesByTypeStub = sinon.stub(serviceData, 'getInstancesByType').returns({length: 'mock length'})
+      getInstancesByTypeStub = sinon.stub(serviceData, 'getInstancesByType').returns({ length: 'mock length' })
 
       returnValue = countInstancesByType(mockArgs)
     })

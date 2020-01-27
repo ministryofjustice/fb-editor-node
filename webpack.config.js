@@ -73,6 +73,6 @@ module.exports = () => ({
         buildTargetPath.concat('/*.js.map')
       ]
     }),
-    new EnvironmentPlugin({NODE_ENV: 'production'})
+    new EnvironmentPlugin({ NODE_ENV: 'production' })
   ]
 })

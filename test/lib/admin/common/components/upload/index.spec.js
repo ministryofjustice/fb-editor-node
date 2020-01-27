@@ -22,20 +22,20 @@ describe('~/fb-editor-node/lib/admin/common/components/upload', () => {
   describe('`getUrlMatch()`', () => it('returns a string', () => expect(getUrlMatch('/url-pattern')).to.equal('url-pattern')))
 
   describe('`isUploadComponent()`', () => {
-    describe('The component is an Upload component', () => it('returns true', () => expect(isUploadComponent({_type: 'upload'}))))
+    describe('The component is an Upload component', () => it('returns true', () => expect(isUploadComponent({ _type: 'upload' }))))
 
-    describe('The component is not an Upload component', () => it('returns false', () => expect(isUploadComponent({_type: 'mock component type'}))))
+    describe('The component is not an Upload component', () => it('returns false', () => expect(isUploadComponent({ _type: 'mock component type' }))))
   })
 
   describe('`isUploadCheckPage()`', () => {
-    describe('The page is an Upload Check page', () => it('returns true', () => expect(isUploadCheckPage({_type: 'page.uploadCheck'}))))
+    describe('The page is an Upload Check page', () => it('returns true', () => expect(isUploadCheckPage({ _type: 'page.uploadCheck' }))))
 
-    describe('The page is not an Upload Check page', () => it('returns false', () => expect(isUploadCheckPage({_type: 'mock page type'}))))
+    describe('The page is not an Upload Check page', () => it('returns false', () => expect(isUploadCheckPage({ _type: 'mock page type' }))))
   })
 
   describe('`isUploadSummaryPage()`', () => {
-    describe('The page is an Upload Summary page', () => it('returns true', () => expect(isUploadSummaryPage({_type: 'page.uploadSummary'}))))
+    describe('The page is an Upload Summary page', () => it('returns true', () => expect(isUploadSummaryPage({ _type: 'page.uploadSummary' }))))
 
-    describe('The page is not an Upload Summary page', () => it('returns false', () => expect(isUploadSummaryPage({_type: 'mock page type'}))))
+    describe('The page is not an Upload Summary page', () => it('returns false', () => expect(isUploadSummaryPage({ _type: 'mock page type' }))))
   })
 })

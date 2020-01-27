@@ -70,7 +70,7 @@ describe('~/fb-editor-node/lib/service-data/runtime/entry-points', () => {
   describe('`getEntryPointInstances()`', () => {
     it('returns an object', () => {
       expect(getEntryPointInstances(mockSteps))
-        .to.eql({'entry-point-one': mockEntryPointOne, 'entry-point-two': mockEntryPointTwo})
+        .to.eql({ 'entry-point-one': mockEntryPointOne, 'entry-point-two': mockEntryPointTwo })
     })
   })
 })

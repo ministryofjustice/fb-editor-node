@@ -20,7 +20,7 @@ const createSelect = (name, values, selectedValue) => {
 }
 
 const createIdentifier = (condition, conditionId) => {
-  const {identifier} = condition
+  const { identifier } = condition
   const values = allowableIdentifiers.map(item => {
     return {
       value: item.name,
@@ -37,7 +37,7 @@ const asIsOperators = [
   'number'
 ]
 const createOperator = (condition, conditionId) => {
-  let {identifier, operator, type, negated} = condition
+  let { identifier, operator, type, negated } = condition
   if (!identifier) {
     return ''
   }
@@ -61,7 +61,7 @@ const createOperator = (condition, conditionId) => {
 }
 
 const createValue = (condition, conditionId) => {
-  const {operator, value, enums} = condition
+  const { operator, value, enums } = condition
   if (!operator || operator === 'defined' || operator === 'isTrue') {
     return ''
   }
@@ -76,7 +76,7 @@ const createValue = (condition, conditionId) => {
 }
 
 const createAnswer = (condition) => {
-  const {identifier} = condition
+  const { identifier } = condition
   const answerElement = identifier && identifier.endsWith('[*]') ? 'any answer for' : 'the answer for'
   return answerElement
 }
@@ -125,7 +125,7 @@ const createCondition = (condition, conditionId = '', noDelete) => {
     return ''
   }
   condition = JSON.parse(JSON.stringify(condition))
-  const {all, any, exactly} = condition
+  const { all, any, exactly } = condition
   if (all) {
     return createConditions(all, conditionId, 'all')
   }
@@ -136,7 +136,7 @@ const createCondition = (condition, conditionId = '', noDelete) => {
     return createConditions(exactly, conditionId, 'exactly')
   }
   // console.log('conditionId', conditionId)
-  const {identifier} = condition
+  const { identifier } = condition
   const enums = allowableIdentifiers.filter(item => item.name === identifier).map(item => item.enums)[0]
   condition.enums = enums
   let conditionRemove = ''
@@ -282,7 +282,7 @@ const allowableOperators = []
 const allowableIdentifiers = JSON.parse(unescape(formElements.booleanConditional.value)).reverse()
 const allowableOperatorsIn = JSON.parse(unescape(formElements.allowableOperators.value))
 
-Object.entries(allowableOperatorsIn).forEach(([key, {type, yes, no}]) => {
+Object.entries(allowableOperatorsIn).forEach(([key, { type, yes, no }]) => {
   allowableOperators.push({
     operator: key,
     type,
@@ -315,7 +315,7 @@ const getValueDestination = (destination) => {
 
 const updateValueControl = (input) => {
   if (input === 'condition') {
-    value = value || {identifier: '', operator: ''}
+    value = value || { identifier: '', operator: '' }
     input = JSON.stringify(value, null, 2)
   } else {
     value = undefined
