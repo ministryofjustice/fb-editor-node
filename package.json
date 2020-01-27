@@ -39,7 +39,7 @@
   "license": "MIT",
   "dependencies": {
     "@ministryofjustice/fb-runner-node": "0.1.30",
-    "@ministryofjustice/module-alias": "^1.0.9",
+    "@ministryofjustice/module-alias": "^1.0.11",
     "ajv": "^6.11.0",
     "autosize": "^4.0.2",
     "cross-env": "^7.0.0",
