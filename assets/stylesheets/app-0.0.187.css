@@ -110,7 +110,6 @@
 .fb-navigation ul {
   margin: 0;
   padding: 0;
-  display: -webkit-box;
   display: flex
 }
 

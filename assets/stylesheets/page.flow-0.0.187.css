@@ -21,9 +21,7 @@ html {
 
 .fb-flow-wrapper {
   margin-left: -150px;
-  -webkit-transform-origin: top left;
   transform-origin: top left;
-  -webkit-transform: scale(.375);
   transform: scale(.375);
   white-space: nowrap;
   vertical-align: top
@@ -483,16 +481,12 @@ footer.govuk-footer {
 }
 
 .govuk-footer__meta-item--grow {
-  -webkit-transform-origin: bottom left;
   transform-origin: bottom left;
-  -webkit-transform: scale(.75);
   transform: scale(.75)
 }
 
 .govuk-footer__copyright-logo {
-  -webkit-transform-origin: bottom right;
   transform-origin: bottom right;
-  -webkit-transform: scale(.5);
   transform: scale(.5)
 }
 
@@ -516,9 +510,7 @@ footer.govuk-footer {
 #minimapContainer .govuk-main-wrapper {
   position: relative;
   z-index: 1001;
-  -webkit-transform-origin: top left;
   transform-origin: top left;
-  -webkit-transform: scale(.05);
   transform: scale(.05)
 }
 
