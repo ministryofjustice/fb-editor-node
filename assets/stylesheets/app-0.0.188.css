@@ -110,7 +110,6 @@
 .fb-navigation ul {
   margin: 0;
   padding: 0;
-  display: -webkit-box;
   display: flex
 }
 
@@ -382,4 +381,4 @@ button.govuk-button.fb-editor-button {
 .fb-block--add:active:before {
   top: 0
 }
-/*# sourceMappingURL=app-0.0.187.css.map */
+/*# sourceMappingURL=app-0.0.188.css.map */
