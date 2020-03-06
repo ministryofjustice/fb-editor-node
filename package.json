@@ -1,6 +1,6 @@
 {
   "name": "@ministryofjustice/fb-editor-node",
-  "version": "0.0.190",
+  "version": "0.0.191",
   "engines": {
     "node": "12.4.0"
   },
