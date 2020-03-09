@@ -20,7 +20,7 @@
     "build:css:watch": "npm run gulp -- build:css:watch",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
-    "lint:js": "eslint *.js lib src build test",
+    "lint:js": "eslint *.js lib src bin build test",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:css": "stylelint src/sass",
     "lint:css:fix": "npm run lint:css -- --fix",
@@ -43,11 +43,14 @@
     "ajv": "^6.12.0",
     "autosize": "^4.0.2",
     "cross-env": "^7.0.2",
+    "debug": "^4.1.1",
     "deep-equal": "^2.0.1",
     "dragula": "^3.7.2",
+    "ensure-dir": "^0.1.0",
     "glob-all": "^3.1.0",
     "jsonpath": "^1.0.2",
-    "lodash.clonedeep": "^4.5.0"
+    "lodash.clonedeep": "^4.5.0",
+    "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.8.7",
