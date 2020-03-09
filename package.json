@@ -7,7 +7,7 @@
   "description": "Form Builder Editor (for Node)",
   "main": "./index.js",
   "scripts": {
-    "start": "node bin/start",
+    "start": "DEBUG=editor*,runner* node bin/start",
     "build": "cross-env NODE_ENV=production concurrently -r \"npm run gulp -- build\" \"webpack\"",
     "build:watch": "cross-env NODE_ENV=production concurrently -r \"npm run gulp -- build:watch\" \"webpack --watch\"",
     "build:fonts": "npm run gulp -- build:fonts",
