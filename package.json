@@ -24,7 +24,7 @@
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:css": "stylelint src/sass",
     "lint:css:fix": "npm run lint:css -- --fix",
-    "test": "DEBUG=editor* mocha test --recursive",
+    "test": "DEBUG=editor*,runner* mocha test --recursive",
     "transform": "npm run gulp -- transform",
     "transform:templates": "npm run gulp -- transform:templates",
     "transform:specifications": "npm run gulp -- transform:specifications",
