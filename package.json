@@ -1,13 +1,13 @@
 {
   "name": "@ministryofjustice/fb-editor-node",
-  "version": "0.0.192",
+  "version": "0.0.193",
   "engines": {
     "node": "12.4.0"
   },
   "description": "Form Builder Editor (for Node)",
   "main": "./index.js",
   "scripts": {
-    "start": "node bin/start",
+    "start": "DEBUG=editor*,runner* node bin/start",
     "build": "cross-env NODE_ENV=production concurrently -r \"npm run gulp -- build\" \"webpack\"",
     "build:watch": "cross-env NODE_ENV=production concurrently -r \"npm run gulp -- build:watch\" \"webpack --watch\"",
     "build:fonts": "npm run gulp -- build:fonts",
@@ -20,11 +20,11 @@
     "build:css:watch": "npm run gulp -- build:css:watch",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
-    "lint:js": "eslint *.js lib src build test",
+    "lint:js": "eslint *.js lib src bin build test",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:css": "stylelint src/sass",
     "lint:css:fix": "npm run lint:css -- --fix",
-    "test": "mocha test --recursive",
+    "test": "DEBUG=editor*,runner* mocha test --recursive",
     "transform": "npm run gulp -- transform",
     "transform:templates": "npm run gulp -- transform:templates",
     "transform:specifications": "npm run gulp -- transform:specifications",
@@ -38,16 +38,19 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@ministryofjustice/fb-runner-node": "0.1.41",
+    "@ministryofjustice/fb-runner-node": "0.1.42",
     "@ministryofjustice/module-alias": "^1.0.12",
     "ajv": "^6.12.0",
     "autosize": "^4.0.2",
     "cross-env": "^7.0.2",
+    "debug": "^4.1.1",
     "deep-equal": "^2.0.1",
     "dragula": "^3.7.2",
+    "ensure-dir": "^0.1.0",
     "glob-all": "^3.1.0",
     "jsonpath": "^1.0.2",
-    "lodash.clonedeep": "^4.5.0"
+    "lodash.clonedeep": "^4.5.0",
+    "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.8.7",
@@ -80,7 +83,7 @@
     "postcss-scss": "^2.0.0",
     "proxyquire": "^2.1.3",
     "sacred-fs": "^1.0.14",
-    "sinon": "^9.0.0",
+    "sinon": "^9.0.1",
     "sinon-chai": "^3.5.0",
     "stylelint": "^13.2.1",
     "stylelint-config-recommended-scss": "^4.2.0",

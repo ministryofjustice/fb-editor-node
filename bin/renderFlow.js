@@ -42,7 +42,7 @@ const renderPage = async (url) => {
       path: '/tmp/flow.pdf'
     })
 
-    await page.screenshot({path: '/tmp/flow.png'})
+    await page.screenshot({ path: '/tmp/flow.png' })
 
     await page.goto('about:blank')
     await page.close()
