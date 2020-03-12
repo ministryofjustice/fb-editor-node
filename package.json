@@ -2,7 +2,7 @@
   "name": "@ministryofjustice/fb-editor-node",
   "version": "0.0.194",
   "engines": {
-    "node": "12.4.0"
+    "node": ">=12.4.0"
   },
   "description": "Form Builder Editor (for Node)",
   "main": "./index.js",
