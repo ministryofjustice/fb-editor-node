@@ -1,13 +1,13 @@
 {
   "name": "@ministryofjustice/fb-editor-node",
-  "version": "0.0.195",
+  "version": "0.0.196",
   "engines": {
     "node": ">=12.4.0"
   },
   "description": "Form Builder Editor (for Node)",
   "main": "./index.js",
   "scripts": {
-    "start": "DEBUG=editor*,runner* node bin/start",
+    "start": "DEBUG=editor*,runner*,client* node bin/start",
     "build": "cross-env NODE_ENV=production concurrently -r \"npm run gulp -- build\" \"webpack\"",
     "build:watch": "cross-env NODE_ENV=production concurrently -r \"npm run gulp -- build:watch\" \"webpack --watch\"",
     "build:fonts": "npm run gulp -- build:fonts",
@@ -38,7 +38,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@ministryofjustice/fb-runner-node": "0.1.44",
+    "@ministryofjustice/fb-runner-node": "0.1.45",
     "@ministryofjustice/module-alias": "^1.0.13",
     "ajv": "^6.12.0",
     "autosize": "^4.0.2",
