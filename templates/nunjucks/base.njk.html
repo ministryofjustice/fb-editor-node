@@ -110,20 +110,6 @@
 {% endblock %}
 
 {% block header %}
-{% if page.preview.next or page.preview.previous  %}
-<div class="PreviewSummary-container">
-<div class="PreviewSummary xgovuk-width-container govuk-body-m" role="group" aria-labelledby="preview-summary-heading" tabindex="-1">
-<div class="PreviewSummary__links">
-{% if page.preview.previous %}
-<p class="fb-preview-previous"><a href="{{ page.preview.previous.url }}"><span class="fb-preview-direction">Previous page</span> {{ page.preview.previous.title | safe }}</a></p>
-{% endif %}
-{% if page.preview.next %}
-<p class="fb-preview-next"><a href="{{ page.preview.next.url }}"><span class="fb-preview-direction">Next page</span> {{ page.preview.next.title | safe }}</a></p>
-{% endif %}
-</div>
-</div>
-</div>
-{% endif %}
 
 {% if (page.MODE === 'edit') or (page.MODE === 'preview') %}
 <div class="content-wrapper content-wrapper-{{ page.MODE }}">
