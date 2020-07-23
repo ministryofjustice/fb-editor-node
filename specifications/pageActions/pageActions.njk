@@ -1,0 +1,19 @@
+{% macro pageActions(data) %}
+  <div class="moj-page-header-actions"
+    <h1 class="govuk-heading-xl">{{ data }}</h1>
+    <div class="moj-page-header-actions__actions">
+      <div class="moj-button-menu">
+      	<div class="moj-button-menu__wrapper">
+      		<a href="/admin/add/page" role="button" draggable="false" class="govuk-button moj-button-menu__item" data-module="govuk-button">
+      		Add page
+      		</a>
+      	</div>
+      </div>
+    </div>
+  </div>
+  <div class="moj-action-bar">
+    <div class="govuk-!-font-size-19 govuk-!-margin-top-2" style="float: right; font-family: GDS Transport">
+  	  <a href="/admin/flow">Flow</a> / <a href="/admin">List</a>
+    </div>
+  </div>
+{% endmacro %}

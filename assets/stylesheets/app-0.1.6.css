@@ -6403,11 +6403,6 @@ only screen and (min-resolution:192dpi) {
   color: #d4351c
 }
 
-.moj-button-menu {
-  display: inline-block;
-  position: relative
-}
-
 .moj-button-menu__toggle-button {
   display: inline-block;
   margin-right: 10px;
@@ -8002,7 +7997,8 @@ span.moj-header__link:hover {
 }
 
 .moj-primary-navigation__nav {
-  text-align: left
+  text-align: left;
+  text-align: right
 }
 
 @media (min-width:48.0625em) {
@@ -9317,6 +9313,43 @@ span.moj-header__link:hover {
   .moj-width-container {
     margin: 0 auto
   }
+}
+
+.moj-editor-primary-navigation__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0!important;
+  padding: 0
+}
+
+.moj-primary-navigation__identity {
+  display: inline-block;
+  text-align: left
+}
+
+.moj-primary-navigation__identity-title {
+  font-family: GDS Transport,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-left: 1rem;
+  margin-top: 1rem
+}
+
+.moj-page-header-actions__actions,
+.moj-primary-navigation__identity-title {
+  display: inline-block;
+  vertical-align: middle
+}
+
+.moj-button-menu {
+  display: inline-block;
+  position: relative
+}
+
+.fb-flow-container .fb-editor-header--wrapper {
+  display: none
 }
 
 .fb-editor-liveheader {

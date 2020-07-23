@@ -11,14 +11,6 @@ html {
   z-index: 10
 }
 
-.fb-editor-header--wrapper + .govuk-width-container {
-  margin: 6rem 0 0
-}
-
-.govuk-skip-link + .govuk-width-container {
-  margin: 3rem 0 0
-}
-
 .fb-flow-wrapper {
   margin-left: -150px;
   transform-origin: top left;
