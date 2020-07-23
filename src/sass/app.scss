@@ -1,6 +1,10 @@
 // 1
-@import "node_modules/govuk-frontend/govuk/all";
-@import "node_modules/@ministryofjustice/frontend/moj/all";
+@import "govuk-frontend/govuk/all";
+@import "@ministryofjustice/frontend/moj/all";
+
+.moj-header__container {
+	margin-left: 15px !important;
+}
 
 .fb-editor-liveheader {
   position: absolute;
@@ -27,7 +31,7 @@
 .fb-editor-header {
   background: #000;
   color: #fff;
-  border-bottom: solid 10px #f47738;
+  border-bottom: solid 10px #1d70b8;
   display: table;
   width: 100%;
 }

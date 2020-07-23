@@ -6894,7 +6894,8 @@ only screen and (min-resolution:192dpi) {
 .moj-header__container {
   max-width: 960px;
   margin: 0 15px;
-  position: relative
+  position: relative;
+  margin-left: 15px!important
 }
 
 @media (min-width:40.0625em) {
@@ -9343,7 +9344,7 @@ span.moj-header__link:hover {
 .fb-editor-header {
   background: #000;
   color: #fff;
-  border-bottom: 10px solid #f47738;
+  border-bottom: 10px solid #1d70b8;
   display: table;
   width: 100%
 }
