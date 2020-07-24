@@ -1,8 +1,6 @@
 {% extends "_page.njk.html" %}
 
 {% block content %}
-  {{ callMacro('pageActions', page.heading) }}
-
   <div class="fb-flow-wrapper">
     {% for flowStep in page.flowSteps %}
     <div class="fb-flow-container">

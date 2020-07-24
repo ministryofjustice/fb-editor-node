@@ -76,6 +76,10 @@
 	</div>
 </div>
 
+{% if flowActive %}
+  {{ callMacro('pageActions', 'Page flow') }}
+{% endif %}
+
 {% if page.MODEURL %}
 {% set MODEURL = page.MODEURL %}
 {% if MODEURL == '/' %}

@@ -947,8 +947,7 @@
 .govuk-width-container {
   max-width: 960px;
   margin-right: 15px;
-  margin-left: 15px;
-  max-width: none
+  margin-left: 15px
 }
 
 @supports (margin:max(calc(0px))) {
