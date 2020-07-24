@@ -35,6 +35,16 @@
   vertical-align: middle;
 }
 
+.govuk-width-container {
+  max-width: none;
+}
+
+.moj-page-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .moj-page-header-actions__actions {
   display: inline-block;
   vertical-align: middle;
@@ -43,6 +53,14 @@
 .moj-button-menu {
   display: inline-block;
   position: relative;
+}
+
+.fb-editor-header--wrapper + .govuk-width-container {
+  margin: 6rem 0 0;
+}
+
+.govuk-skip-link + .govuk-width-container {
+  margin: 3rem 0 0;
 }
 
 .fb-flow-container .fb-editor-header--wrapper {

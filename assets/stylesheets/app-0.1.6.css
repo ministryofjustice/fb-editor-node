@@ -947,7 +947,8 @@
 .govuk-width-container {
   max-width: 960px;
   margin-right: 15px;
-  margin-left: 15px
+  margin-left: 15px;
+  max-width: none
 }
 
 @supports (margin:max(calc(0px))) {
@@ -7736,7 +7737,10 @@ span.moj-header__link:hover {
   font-size: 0;
   margin-bottom: 40px;
   min-height: 40px;
-  text-align: justify
+  text-align: justify;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
 }
 
 .moj-page-header-actions:after {
@@ -9329,16 +9333,17 @@ span.moj-header__link:hover {
 }
 
 .moj-primary-navigation__identity-title {
+  display: inline-block;
   font-family: GDS Transport,Arial,sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.25;
   margin-left: 1rem;
-  margin-top: 1rem
+  margin-top: 1rem;
+  vertical-align: middle
 }
 
-.moj-page-header-actions__actions,
-.moj-primary-navigation__identity-title {
+.moj-page-header-actions__actions {
   display: inline-block;
   vertical-align: middle
 }
@@ -9346,6 +9351,14 @@ span.moj-header__link:hover {
 .moj-button-menu {
   display: inline-block;
   position: relative
+}
+
+.fb-editor-header--wrapper + .govuk-width-container {
+  margin: 6rem 0 0
+}
+
+.govuk-skip-link + .govuk-width-container {
+  margin: 3rem 0 0
 }
 
 .fb-flow-container .fb-editor-header--wrapper {
