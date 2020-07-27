@@ -2,7 +2,7 @@
     "_id": "admin.main",
     "_type": "page.admin",
     "url": "/",
-    "heading": "Page list",
+    "heading": "Pages",
     "components": [
       {
         "_id": "admin.main--id",

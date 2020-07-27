@@ -36,7 +36,7 @@
 
 {% if page.MODE === 'live' %}
 <div class="fb-editor-liveheader">
-<a class="govuk-link" href="/admin/flow">Return to Build</a>
+<a class="govuk-link" href="/admin/flow">Edit form</a>
 </div>
 {% else %}
 <div class="fb-editor-header--wrapper">
@@ -52,6 +52,9 @@
            href="{{ flowUrl }}">
           Ministry of Justice
         </a>
+
+        <a class="moj-header__link moj-header__link--service-name"
+        href="{{ flowUrl }}">MOJ Online Editor</a>
 
     {% if req.originalUrl === '/admin/instance/service' %}
       {% set configurationActive = true %}
