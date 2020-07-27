@@ -1,5 +1,23 @@
 {% extends "_base.njk.html" %}
 
+{% set flowUrl = '/admin/flow' %}
+{% set listUrl = '/admin' %}
+{% set addPageUrl = '/admin/add/page' %}
+
+{% if req.originalUrl === flowUrl %}{% set flowActive = true %}{% endif %}
+{% if req.originalUrl === listUrl %}{% set listActive = true %}{% endif %}
+{% if req.originalUrl === addPageUrl %}{% set addPageActive = true %}{% endif %}
+{% set addPageMatch = r/admin\/(new|create)\/page.*\/steps\/edit/g %}
+{% if addPageMatch.test(req.originalUrl) %}{% set addPageActive = true %}{% endif %}
+
+{% if flowActive %}
+  {% set bodyClasses = 'editor-page-flow' %}
+{% endif %}
+
+{% if listActive %}
+  {% set bodyClasses = 'editor-page-list' %}
+{% endif %}
+
 {% macro modeNavLink(content, type, typeLink, pageLink, mode) %}
 {% set linkify = mode != type %}
 <li class="govuk-link fb-navigation-mode fb-navigation-{{ type }}{% if not linkify %} fb-navigation-mode-current{% endif %}">{% if linkify %}<a href="{{ pageLink }}{% if typeLink or not pageLink %}/{% endif %}{{ typeLink }}">{% endif %}{{ content }}{% if linkify %}</a>{% endif %}</li>
@@ -44,16 +62,6 @@
 		{% endif %}
 </header>
 
-{% set flowUrl = '/admin/flow' %}
-{% set listUrl = '/admin' %}
-{% set addPageUrl = '/admin/add/page' %}
-
-{% if req.originalUrl === flowUrl %}{% set flowActive = true %}{% endif %}
-{% if req.originalUrl === listUrl %}{% set listActive = true %}{% endif %}
-{% if req.originalUrl === addPageUrl %}{% set addPageActive = true %}{% endif %}
-{% set addPageMatch = r/admin\/(new|create)\/page.*\/steps\/edit/g %}
-{% if addPageMatch.test(req.originalUrl) %}{% set addPageActive = true %}{% endif %}
-
 <div class="moj-primary-navigation">
 	<div class="moj-editor-primary-navigation__container">
 		<div class="moj-primary-navigation__identity">
@@ -77,7 +85,11 @@
 </div>
 
 {% if flowActive %}
-  {{ callMacro('pageActions', 'Page flow') }}
+  {{ callMacro('pageActions', { heading: 'Page flow', flowActive: flowActive }) }}
+{% endif %}
+
+{% if listActive %}
+  {{ callMacro('pageActions', { listActive: listActive }) }}
 {% endif %}
 
 {% if page.MODEURL %}

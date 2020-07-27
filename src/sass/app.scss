@@ -36,9 +36,14 @@
 }
 
 .moj-page-header-actions {
+  background: #fff;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 0 !important;
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+  padding-left: 4rem;
 }
 
 .moj-page-header-actions__actions {
@@ -51,8 +56,14 @@
   position: relative;
 }
 
-.fb-editor-header--wrapper + .govuk-width-container {
-  margin: 6rem 0 0;
+.editor-page-flow .fb-editor-header--wrapper + .govuk-width-container {
+  margin: 12rem 0 0;
+}
+
+.editor-page-list .govuk-width-container {
+  bottom: 6rem;
+  margin-left: 4rem;
+  position: relative;
 }
 
 .govuk-skip-link + .govuk-width-container {
