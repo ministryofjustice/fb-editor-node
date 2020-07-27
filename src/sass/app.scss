@@ -7,11 +7,17 @@
 }
 
 .moj-editor-primary-navigation__container {
+  background: #f8f8f8;
+  border-bottom: 1px solid #b3b9be;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 0 0 0 !important;
   padding: 0 0 0 0;
+}
+
+.moj-primary-navigation {
+  border-bottom: none !important;
 }
 
 .moj-primary-navigation__nav {
@@ -26,12 +32,11 @@
 .moj-primary-navigation__identity-title {
   display: inline-block;
   font-family: "GDS Transport", Arial, sans-serif;
-  font-size: 0.875rem;
-  font-size: 16px;
+  font-size: 28.5px;
   font-weight: bold;
   line-height: 1.25;
   margin-left: 1rem;
-  margin-top: 1rem;
+  margin-top: 18px;
   vertical-align: middle;
 }
 
@@ -54,6 +59,13 @@
 .moj-button-menu {
   display: inline-block;
   position: relative;
+}
+
+.moj-page-action-links {
+  float: right;
+  font-family: "GDS Transport", Arial, sans-serif;
+  font-size: 28.5px;
+  margin-top: 20px;
 }
 
 .editor-page-flow .fb-editor-header--wrapper + .govuk-width-container {

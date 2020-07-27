@@ -2,7 +2,7 @@
   "_id": "admin.category",
   "_type": "page.admin",
   "url": "/category/:category",
-  "heading": "Edit default {category}s",
+  "heading": "Global content",
   "components": [
     {
       "_id": "admin.category",
