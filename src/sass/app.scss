@@ -60,13 +60,13 @@
   margin: 12rem 0 0;
 }
 
-.editor-page-list .govuk-width-container {
+.editor-page-list .govuk-width-container { // stylelint-disable-line no-descending-specificity
   bottom: 6rem;
   margin-left: 4rem;
   position: relative;
 }
 
-.govuk-skip-link + .govuk-width-container {
+.govuk-skip-link + .govuk-width-container { // stylelint-disable-line no-descending-specificity
   margin: 3rem 0 0;
 }
 
@@ -216,7 +216,7 @@
 .fb-navigation-modes {
   position: absolute;
   right: 1.5rem;
-  margin-top: -2.75rem;
+  margin-top: 0.5rem;
   border: solid 1px #797979;
 }
 
