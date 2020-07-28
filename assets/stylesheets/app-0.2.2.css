@@ -9342,7 +9342,7 @@ span.moj-header__link:hover {
 .moj-primary-navigation__identity-title {
   display: inline-block;
   font-family: GDS Transport,Arial,sans-serif;
-  font-size: 1.5vw;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.25;
   margin-left: 1rem;
@@ -9363,7 +9363,7 @@ span.moj-header__link:hover {
 .moj-page-action-links {
   float: right;
   font-family: GDS Transport,Arial,sans-serif;
-  font-size: 2vw;
+  font-size: 1rem;
   margin-top: 20px
 }
 
@@ -9598,7 +9598,7 @@ li.fb-navigation-mode-current:hover {
   }
 
   .fb-navigation li a {
-    font-size: 1.5vw;
+    font-size: 1.1875rem;
     font-weight: 700
   }
 }
