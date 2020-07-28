@@ -1,0 +1,28 @@
+{% macro pageActions(data) %}
+  <div class="moj-page-header-actions">
+    <h1 class="govuk-heading-xl">{{ data.heading }}</h1>
+
+    <div class="moj-page-header-actions__actions">
+      <div class="moj-button-menu">
+      	<div class="moj-button-menu__wrapper">
+      		<a href="/admin/add/page" role="button" draggable="false" class="govuk-button moj-button-menu__item" data-module="govuk-button">
+      		Add page
+      		</a>
+      	</div>
+        <div class="moj-page-action-links">
+          {% if data.flowActive %}
+            <span>Flow</span>
+          {% else %}
+            <a href="/admin/flow">Flow</a>
+          {% endif %}
+  	       /
+          {% if data.listActive %}
+            <span>List</span>
+          {% else %}
+            <a href="/admin">List</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

@@ -1,4 +1,90 @@
 // 1
+@import "govuk-frontend/govuk/all";
+@import "@ministryofjustice/frontend/moj/all";
+
+.moj-header__container {
+	margin-left: 15px !important;
+}
+
+.moj-editor-primary-navigation__container {
+  background: #f8f8f8;
+  border-bottom: 1px solid #b3b9be;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 0 0 !important;
+  padding: 0 0 0 0;
+}
+
+.moj-primary-navigation {
+  border-bottom: none !important;
+}
+
+.moj-primary-navigation__nav {
+  text-align: right;
+}
+
+.moj-primary-navigation__identity {
+  display: inline-block;
+  text-align: left;
+}
+
+.moj-primary-navigation__identity-title {
+  display: inline-block;
+  font-family: "GDS Transport", Arial, sans-serif;
+  font-size: 28.5px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-left: 1rem;
+  margin-top: 18px;
+  vertical-align: middle;
+}
+
+.moj-page-header-actions {
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 0 !important;
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+  padding-left: 4rem;
+}
+
+.moj-page-header-actions__actions {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.moj-button-menu {
+  display: inline-block;
+  position: relative;
+}
+
+.moj-page-action-links {
+  float: right;
+  font-family: "GDS Transport", Arial, sans-serif;
+  font-size: 28.5px;
+  margin-top: 20px;
+}
+
+.editor-page-flow .fb-editor-header--wrapper + .govuk-width-container {
+  margin: 12rem 0 0;
+}
+
+.editor-page-list .govuk-width-container { // stylelint-disable-line no-descending-specificity
+  bottom: 6rem;
+  margin-left: 4rem;
+  position: relative;
+}
+
+.govuk-skip-link + .govuk-width-container { // stylelint-disable-line no-descending-specificity
+  margin: 3rem 0 0;
+}
+
+.fb-flow-container .fb-editor-header--wrapper {
+  display: none;
+}
 
 .fb-editor-liveheader {
   position: absolute;
@@ -25,7 +111,7 @@
 .fb-editor-header {
   background: #000;
   color: #fff;
-  border-bottom: solid 10px #f47738;
+  border-bottom: solid 10px #1d70b8;
   display: table;
   width: 100%;
 }
@@ -142,7 +228,7 @@
 .fb-navigation-modes {
   position: absolute;
   right: 1.5rem;
-  margin-top: -2.75rem;
+  margin-top: 0.5rem;
   border: solid 1px #797979;
 }
 
