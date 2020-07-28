@@ -9342,7 +9342,7 @@ span.moj-header__link:hover {
 .moj-primary-navigation__identity-title {
   display: inline-block;
   font-family: GDS Transport,Arial,sans-serif;
-  font-size: 28.5px;
+  font-size: 1.5vw;
   font-weight: 700;
   line-height: 1.25;
   margin-left: 1rem;
@@ -9363,7 +9363,7 @@ span.moj-header__link:hover {
 .moj-page-action-links {
   float: right;
   font-family: GDS Transport,Arial,sans-serif;
-  font-size: 28.5px;
+  font-size: 2vw;
   margin-top: 20px
 }
 
@@ -9375,6 +9375,10 @@ span.moj-header__link:hover {
   bottom: 6rem;
   margin-left: 4rem;
   position: relative
+}
+
+.editor-page-list .govuk-footer .govuk-width-container {
+  position: static!important
 }
 
 .govuk-skip-link + .govuk-width-container {
@@ -9553,7 +9557,7 @@ li.fb-navigation-mode-current {
   padding: .25rem 1rem;
   min-width: 6rem;
   text-align: center;
-  font-size: 1.1875rem;
+  font-size: 1.5vw;
   background-color: #dee0e2;
   color: #71777b;
   text-decoration: none
@@ -9594,7 +9598,7 @@ li.fb-navigation-mode-current:hover {
   }
 
   .fb-navigation li a {
-    font-size: 1.1875rem;
+    font-size: 1.5vw;
     font-weight: 700
   }
 }
@@ -9766,4 +9770,4 @@ button.govuk-button.fb-editor-button {
 .fb-block--add:active:before {
   top: 0
 }
-/*# sourceMappingURL=app-0.2.1.css.map */
+/*# sourceMappingURL=app-0.2.2.css.map */
