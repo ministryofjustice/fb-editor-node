@@ -7,6 +7,7 @@
 [Node](https://nodejs.org) >= 12.4.0
 
 ## Installation
+
 ```
 git clone git@github.com:ministryofjustice/fb-editor-node.git
 cd fb-editor-node
