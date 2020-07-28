@@ -26,7 +26,9 @@ SERVICE_PATH=[path to form] npm start
 
 (Where `[path to form]` is a path to the location on your file system of the form. An Example Service form can be cloned from `https://github.com/ministryofjustice/fb-example-service`.)
 
-By default, **Editor** will start on localhost port `3000`. To run on a different port, set the `PORT` environment variable:
+By default, **Editor** will start on localhost port `3000`.
+
+To run on a different port, set the `PORT` environment variable:
 
 ```sh
 PORT=4321 SERVICE_PATH=[path to form] npm start
