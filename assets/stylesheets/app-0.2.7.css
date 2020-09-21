@@ -9864,4 +9864,8 @@ button.govuk-button.fb-editor-button {
 .fb-block--add:active:before {
   top: 0
 }
+
+.fb-underline-on-hover:hover {
+  text-decoration: underline
+}
 /*# sourceMappingURL=app-0.2.7.css.map */

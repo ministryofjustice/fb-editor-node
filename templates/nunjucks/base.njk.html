@@ -53,8 +53,9 @@
           Ministry of Justice
         </a>
 
-        <a class="moj-header__link moj-header__link--service-name"
-        href="{{ flowUrl }}">MOJ Online Editor</a>
+        <a class="moj-header__link moj-header__link--service-name fb-underline-on-hover" href="{{ flowUrl }}">
+          Form Builder Editor
+        </a>
 
     {% if req.originalUrl === '/admin/instance/service' %}
       {% set configurationActive = true %}
@@ -69,7 +70,7 @@
   <div class="moj-editor-primary-navigation__container">
     <div class="moj-primary-navigation__identity">
       <span class="moj-primary-navigation__identity-title">
-        {{ page.service.name }}
+        <a href="{{ flowUrl }}"> {{ page.service.name }} </a>
       </span>
     </div>
     <div class="moj-primary-navigation__nav">
