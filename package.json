@@ -41,7 +41,7 @@
     "@ministryofjustice/fb-runner-node": "0.3.10",
     "@ministryofjustice/fb-transformers": "^1.0.7",
     "@ministryofjustice/module-alias": "^1.0.18",
-    "@ministryofjustice/frontend": "0.0.19-alpha",
+    "@ministryofjustice/frontend": "0.1.0",
     "ajv": "^6.12.0",
     "autosize": "^4.0.2",
     "cross-env": "^7.0.2",
