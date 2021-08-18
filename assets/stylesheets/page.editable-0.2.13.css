@@ -75,7 +75,10 @@ main.govuk-main-wrapper {
   line-height: 1.375
 }
 
-.fb-block-instance-properties li + li.fb-block-instance--all,
+.fb-block-instance-properties li + li.fb-block-instance--all {
+  margin-top: 1rem
+}
+
 .fb-block-instance-properties li.fb-block-instance--delete {
   margin-top: 1rem
 }
@@ -329,4 +332,4 @@ legend.govuk-visually-hidden:before {
   -ms-user-select: none!important;
   user-select: none!important
 }
-/*# sourceMappingURL=page.editable-0.2.11.css.map */
+/*# sourceMappingURL=page.editable-0.2.13.css.map */

@@ -1,6 +1,6 @@
 {
   "name": "@ministryofjustice/fb-editor-node",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "engines": {
     "node": ">=12.4.0"
   },
@@ -38,7 +38,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@ministryofjustice/fb-runner-node": "0.3.12",
+    "@ministryofjustice/fb-runner-node": "0.3.13",
     "@ministryofjustice/fb-transformers": "^1.0.9",
     "@ministryofjustice/frontend": "0.0.19-alpha",
     "@ministryofjustice/module-alias": "^1.0.20",
